@@ -205,7 +205,7 @@ Nota: Asegúrate de que tu aplicación de Firebase esté configurada correctamen
 <!-- ROADMAP -->
 ## Mapa de Ruta
 
-- [ ] Funcionalidad de registro de usuarios
+- [☑️] Funcionalidad de registro de usuarios
 - [ ] Funcionalidad de inicio de sesion
     - [ ] Tradicional
     - [ ] Con proveedor Google
