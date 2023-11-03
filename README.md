@@ -206,9 +206,9 @@ Nota: Asegúrate de que tu aplicación de Firebase esté configurada correctamen
 ## Mapa de Ruta
 
 - [☑️] Funcionalidad de registro de usuarios
-- [ ] Funcionalidad de inicio de sesion
+- [☑️] Funcionalidad de inicio de sesion
     - [☑️] Tradicional
-    - [ ] Con proveedor Google
+    - [☑️] Con proveedor Google
     - [☑️] Bloqueo
     - [☑️] Reestablecimiento
 
