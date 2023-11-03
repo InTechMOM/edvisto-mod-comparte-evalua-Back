@@ -1,6 +1,6 @@
 import { Schema, model, SchemaTypes } from "mongoose";
 
-let values_roles=["Soy Alumno", "Soy Docente"];
+let values_roles=["Soy Estudiante", "Soy Docente"];
 let values_securityQuestions=[
   "Nombre de tu mascota",
   "Animal favorito", 

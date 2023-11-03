@@ -175,3 +175,88 @@
  *    500:
  *     description: Unknown error 
  */
+
+//API PATCH
+
+/**
+ * @openapi 
+ *  components:
+ *   schemas:
+ *    UserEVreset:
+ *     type: object
+ *     properties:
+ *      email:
+ *        type: string
+ *     required:
+ *      - email
+ *      - securityResponse
+ *     example:
+ *      email: some@example.com
+ *      securityResponse: zoe
+ */
+
+/**
+ * @openapi
+ * /api/resetPassword:
+ *  patch:
+ *   summary: The following route, send an email to reset the password, if the email provided matches the one registered on the platform.
+ *   tags: [UserEVreset]
+ *   requestBody:
+ *    required: true
+ *    content:
+ *     application/json:
+ *      schema:
+ *       type: object
+ *       $ref: '#/components/schemas/UserEVreset'
+ *   responses:
+ *    200:
+ *     description: Message sent succesfully
+ *    403:
+ *     description: Unregistered Email or Incorrect security response
+ */
+
+//API LOGIN
+
+
+/**
+ * @openapi 
+ *  components:
+ *   schemas:
+ *    Login:
+ *     type: object
+ *     properties:
+ *      email:
+ *        type: string
+ *      password:
+ *        type: string
+ *     required:
+ *      - email
+ *      - password
+ *     example:
+ *      email: some@example.com
+ *      password: 1234_Do
+ */
+
+/**
+ * @openapi
+ * /api/login:
+ *  post:
+ *   summary: The following route verifies the matching of the email with the password, and is blocked after 3 failed attempts, eventually where a password reset email was sent. Otherwise it gives access to the user.
+ *   tags: [Login]
+ *   requestBody:
+ *    required: true
+ *    content:
+ *     application/json:
+ *      schema:
+ *       type: object
+ *       $ref: '#/components/schemas/Login'
+ *   responses:
+ *    200:
+ *     description: Access a user
+ *    400:
+ *     description: Bad Request
+ *    403:
+ *     description: Unauthorized Access
+ *    500:
+ *     description: UnKwnown Error 
+ */

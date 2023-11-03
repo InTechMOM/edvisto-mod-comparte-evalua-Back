@@ -207,10 +207,10 @@ Nota: Asegúrate de que tu aplicación de Firebase esté configurada correctamen
 
 - [☑️] Funcionalidad de registro de usuarios
 - [ ] Funcionalidad de inicio de sesion
-    - [ ] Tradicional
+    - [☑️] Tradicional
     - [ ] Con proveedor Google
-    - [ ] Bloqueo
-    - [ ] Reestablecimiento
+    - [☑️] Bloqueo
+    - [☑️] Reestablecimiento
 
 Consulte los  [open issues](https://github.com/github_username/repo_name/issues) para obtener una lista completa de los problemas conocidos.
 
