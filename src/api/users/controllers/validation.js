@@ -3,7 +3,7 @@ import JoiDate from "@joi/date";
 
 const extendedJoi = Joi.extend(JoiDate);
 
-let values_roles=["Soy Alumno", "Soy Docente"]
+let values_roles=["Soy Estudiante", "Soy Docente"]
 let values_securityQuestions=[
   "Nombre de tu mascota",
   "Libro preferido", 
