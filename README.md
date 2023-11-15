@@ -26,6 +26,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -105,7 +106,10 @@ El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma ed
 
 **Asignaciones de proyectos:**
 
-- 📝✅ Asignación: Se implementación una funcionalidad que contempla una validación de datos, lectura y procesamiento de datos como; curso, email del docente, name del proyecto, título del fenomeno, descripción, fechas de inicio y finalización, y recursos sugeridos por medio de URL. Para finalmente realizar el respectivo almacenamiento de la asignacion en la base de datos.
+- 📅✨ Asignación: Se implemento una funcionalidad que contempla una validación de datos, lectura y procesamiento de datos como; curso, email del docente, nombre del proyecto, título del fenomeno, descripción, fechas de inicio y finalización, y recursos sugeridos por medio de URL. Para de forma seguida garantizar que ambas fechas suministradas se encuentren no antes del presente día de asignación, y finalmente se realiza el almacenamiento del proyecto.
+
+- 🔄🔍 Recuperación de proyectos: Se considera la funcionalidad para por medio de diversos parámetros suministrados como el; curso y email del docente, se pueda filtrar la creación de proyectos dentro de la base de datos.
+
 
 ### Base de datos y almacenamiento de datos
 
@@ -279,6 +283,8 @@ Enlace del proyecto: [https://github.com/InTechMOM/edvisto-mod-comparte-evalua-B
 [issues-url]: https://github.com/github_username/repo_name/issues
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/carolinarbackendingenieriamecanica/
 [product-screenshot1]: images/registro.png
 [product-screenshot2]: images/ingreso.png
 [product-screenshot2]: images/asignacion.png
