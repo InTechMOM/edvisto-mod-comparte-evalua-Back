@@ -2,6 +2,20 @@ import Assignment from "../../../models/Assignment.js";
 import SchemaAssignment from "./validation.js";
 import UserEV from "../../../models/user.js";
 
+function dateValidation (date) {
+  const currentDate = new Date();
+  const dateParts = date.split("-");
+  if (dateParts.length === 3) {
+    const [day, month, year] = dateParts;
+    const inputDate = new Date(year, month - 1, day); //enero = 0
+    if (inputDate >= currentDate) {
+      return `${year}-${month}-${day}T00:00:00.000Z`;
+    } else {
+      throw new Error("Invalid date");
+    }
+  }
+}
+
 async function assignment(request, response, next) {
   try {
 
@@ -23,21 +37,9 @@ async function assignment(request, response, next) {
       })
     }
 
-    let isoStart;
-    let isoFinish;
-
-    //Validación de fechas
-    const dateStart = startDate.split("-");
-    if (dateStart.length === 3) {
-      const [day, month, year] = dateStart; // Es un array
-      isoStart =`${year}-${month}-${day}T00:00:00.000Z`;
-    }
-
-    const dateFinish = finishDate.split("-");
-    if (dateFinish.length === 3) {
-      const [day, month, year] = dateFinish; // Es un array
-      isoFinish =`${year}-${month}-${day}T00:00:00.000Z`;
-    }
+    //Validación de fecha posterior a la actual
+    const isoStart = dateValidation(startDate)
+    const isoFinish = dateValidation(finishDate)
 
     //Creación de la asignación
     const newAssignment = new Assignment ({
@@ -59,6 +61,9 @@ async function assignment(request, response, next) {
       data: saveAssignment
     })   
   } catch (error) {
+    if (error.message === "Invalid date") {
+      return response.status(400).json("Invalid date. The start/end date must be equal to or later than the current date.");
+    }
     next (error)
   } 
 }

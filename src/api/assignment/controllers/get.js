@@ -2,7 +2,7 @@ import Assignment from "../../../models/Assignment.js";
 
 //Listar
 const allProjects = async (request, response, next) => { 
-  const { course, emailTeacher, name, title, descriptión, emailStudents } = request.query;
+  const { course, emailTeacher, name, title} = request.query;
 
   try {
      
@@ -11,8 +11,6 @@ const allProjects = async (request, response, next) => {
       ...emailTeacher && { emailTeacher },
       ...name && { name },
       ...title && { title },
-      ...descriptión && { descriptión },
-      ...emailStudents && { emailStudents },
     }; 
 
     const arrayProjects = await Assignment.find(filters); 

@@ -37,27 +37,11 @@
  *      course: QuintoA
  *      name: Inteligencia Artificial
  *      title: Análisis de datos utilizando inteligencia artificial
- *      descriptión: 
- *
- *            "Objetivo: Desarrollar un modelo de aprendizaje automático que pueda predecir la probabilidad de que un cliente abandone un servicio.
- *            Pasos:
- *
- *            - Recopilar un conjunto de datos que contenga información sobre los clientes, como sus características demográficas, su historial de compras y su comportamiento en línea.
- *            - Preprocesar los datos para eliminar los valores atípicos y los datos faltantes.
- *            - Seleccionar un algoritmo de aprendizaje automático adecuado para el problema.
- *            - Entrenar el modelo de aprendizaje automático en el conjunto de datos.
- *            - Evaluar el rendimiento del modelo de aprendizaje automático en un conjunto de datos de prueba.
- *       
- *            Criterios de evaluación de la tarea:
- *
- *            - Exactitud del modelo: El modelo debe ser capaz de predecir la probabilidad de abandono con precisión.
- *            - Explicación del modelo: Los estudiantes deben ser capaces de explicar cómo funciona el modelo y cómo llega a sus predicciones.
- *            - Creatividad: Los estudiantes deben demostrar un pensamiento creativo al desarrollar el modelo."
- *
- *      emailStudents: []
+ *      descriptión: Desarrollar un modelo de aprendizaje automático que pueda predecir la probabilidad de que un cliente abandone un servicio
+ *      emailStudents: [some1@example.com]
  *      resourcesURL: [https://www.youtube.com/watch?v=OhEhe2YlzoE]
- *      startDate: "17-10-2023"
- *      finishDate: "27-10-2023"
+ *      startDate: "17-11-2023"
+ *      finishDate: "27-11-2023"
  */
 
 //API POST
@@ -79,7 +63,7 @@
  *    201:
  *     description: Assigned Project
  *    400:
- *     description: Bad Request
+ *     description: Bad Request, or Invalid date
  *    404:
  *     description: Unregistered teacher email
  *    422:
@@ -115,16 +99,6 @@
  *    - in: query
  *      name: name
  *      description: Query for name
- *      schema:
- *        type: string
- *    - in: query
- *      name: descriptión
- *      description: Query for descriptión
- *      schema:
- *        type: string
- *    - in: query
- *      name: emailStudents
- *      description: Query for emailStudents
  *      schema:
  *        type: string
  *   responses:
