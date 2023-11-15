@@ -234,7 +234,7 @@
  *      - password
  *     example:
  *      email: some@example.com
- *      password: 1234_Do
+ *      password: 1234?Do
  */
 
 /**

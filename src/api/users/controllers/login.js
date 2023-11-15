@@ -31,7 +31,16 @@ const login = async (request, response, next) => {
       user.blocked = false;
       await user.save();
       console.log(user.blocked);
-      return response.status(200).json("Welcome");
+
+      
+      const rolWhich = await UserEV.findOne({email});
+      if (rolWhich) {
+        if (rolWhich.rol === "Soy Docente") {
+         return response.status(200).json("Welcome teacher");
+        } else {
+          return response.status(200).json("Welcome student");
+        }
+      }
 
     } catch (error) {
       //Captación de llamada de error por contraseña erronéa de firebase
