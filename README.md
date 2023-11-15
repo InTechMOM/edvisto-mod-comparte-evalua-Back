@@ -103,9 +103,13 @@ El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma ed
 
 ![Product Name Screen Shot][product-screenshot2]
 
+**Asignaciones de proyectos:**
+
+- 📝✅ Asignación: Se implementación una funcionalidad que contempla una validación de datos, lectura y procesamiento de datos como; curso, email del docente, name del proyecto, título del fenomeno, descripción, fechas de inicio y finalización, y recursos sugeridos por medio de URL. Para finalmente realizar el respectivo almacenamiento de la asignacion en la base de datos.
+
 ### Base de datos y almacenamiento de datos
 
-- Uso de Firebase Authentication y Storage: En cuanto a la autenticación, se implemento el servicio de Firebase (Autentication), que proporciona una experiencia segura y confiable para nuestros usuarios. Además de, Firebase Storage con la finalidad de almacenamiento de recursos, asegurando que la información se mantenga segura y accesible en todo momento. 💾
+- Uso de Firebase Authentication: En cuanto a la autenticación, se implemento el servicio de Firebase (Autentication), que proporciona una experiencia segura y confiable para nuestros usuarios. 
 - Conexión con mongoDB como base de datos: Utilizamos MongoDB como nuestra base de datos no relacional para almacenar y gestionar la información del usuario. Brindando la flexibilidad y escalabilidad que queriamos obtener. 📊
 
 ### Validación de Datos
@@ -211,6 +215,8 @@ Nota: Asegúrate de que tu aplicación de Firebase esté configurada correctamen
     - [☑️] Con proveedor Google
     - [☑️] Bloqueo
     - [☑️] Reestablecimiento
+- [☑️] Funcionalidad de asignación de proyectos
+- [  ] Funcionalidad de feedback del proyecto
 
 Consulte los  [open issues](https://github.com/github_username/repo_name/issues) para obtener una lista completa de los problemas conocidos.
 
@@ -275,3 +281,4 @@ Enlace del proyecto: [https://github.com/InTechMOM/edvisto-mod-comparte-evalua-B
 [license-url]: https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/LICENSE.txt
 [product-screenshot1]: images/registro.png
 [product-screenshot2]: images/ingreso.png
+[product-screenshot2]: images/asignacion.png

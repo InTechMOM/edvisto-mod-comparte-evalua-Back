@@ -7,7 +7,7 @@ export const serverRead = (response) => {
 
 //Listar
 const allUsers = async (request, response, next) => { 
-  const { name, lastName, birthdayDate, email, securityQuestion, securityResponse, rol } = request.query;
+  const { name, lastName, birthdayDate, email, securityQuestion, securityResponse, rol, course } = request.query;
 
   try {
      
@@ -17,7 +17,8 @@ const allUsers = async (request, response, next) => {
       ...email && { email },
       ...securityQuestion && { securityQuestion },
       ...securityResponse && { securityResponse },
-      ...rol && { rol }
+      ...rol && { rol },
+      ...course && { course }
     }; 
 
     const arrayUsers = await UserEV.find(filters); 

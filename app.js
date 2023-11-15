@@ -5,6 +5,7 @@ import "./src/config/dbConnection.js";
 import bodyParser from "body-parser"; 
 import middlewareErrors from "./src/api/errors/errors.js";
 import usersRouter from "./src/api/users/routers/index.js";
+import assignmentRouter from "./src/api/assignment/routers/index.js";
 import { serverRead } from "./src/api/users/controllers/get.js";
 import swaggerUi from "swagger-ui-express";
 import { openApiSpecification } from "./src/config/swagger.js";
@@ -19,6 +20,7 @@ app.get("/", serverRead);
 app.use("/docs", swaggerUi.serve);
 app.get("/docs", swaggerUi.setup(openApiSpecification));
 app.use("/api", usersRouter);
+app.use("/api", assignmentRouter);
 
 //Errores
 app.use(middlewareErrors);
