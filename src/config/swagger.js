@@ -16,7 +16,8 @@ servers:[
 apis: [
     'app.js',
     "./src/api/users/documentation/documentation.js",
-    "./src/api/assignment/documentation/documentation.js"
+    "./src/api/assignment/documentation/documentation.js",
+    "./src/api/feedback/documentation/documentation.js"
 ]}
 
 

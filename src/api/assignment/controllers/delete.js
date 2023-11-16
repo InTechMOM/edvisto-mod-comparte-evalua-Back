@@ -1,5 +1,5 @@
 import mongoose from "mongoose"; 
-import Assignment from "../../../models/Assignment.js";
+import Assignment from "../../../models/assignment.js";
 
 const assignmentDelete = async (request, response, next) => { 
   const id = request.params.id

@@ -1,4 +1,3 @@
-import UserEV from "./user.js";
 import { Schema, model, SchemaTypes } from "mongoose";
 
 const assignmentSchema = new Schema(
@@ -48,7 +47,7 @@ const assignmentSchema = new Schema(
     type:SchemaTypes.Date, 
     get: date => date.toISOString().split('T')[0], 
     set: date => new Date(date) 
-  }
+  },
 },
 {
   timestamps: true

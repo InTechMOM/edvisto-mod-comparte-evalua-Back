@@ -110,6 +110,13 @@ El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma ed
 
 - 🔄🔍 Recuperación de proyectos: Se considera la funcionalidad para por medio de diversos parámetros suministrados como el; curso y email del docente, se pueda filtrar la creación de proyectos dentro de la base de datos.
 
+**Carga de video:**
+
+- 📤📅 Entregable: la funcionalidad de delivery, permite a los estudiantes dar respuesta a los proyectos asignados previamente por determinado docente, considerando de forma analoga la previsualización de estos entregables en la interfaz del docente.
+  
+**Feedback del video desarrollado:**
+
+- 😊📊 Feedback: Se implemento una funcionalidad encargada de gestionar el feedback desarrollado por el docente posterior al entregable por cada estudiante, por medio de una modificación a los documentos creados en flujos anteriores permitiendole tener una visualización de la cantidad de entregables faltantes por calificación y la adecuada retroalimentación del desarrollo del trabajo del estudiante de forma númerica y por comentario.
 
 ### Base de datos y almacenamiento de datos
 
@@ -220,7 +227,8 @@ Nota: Asegúrate de que tu aplicación de Firebase esté configurada correctamen
     - [☑️] Bloqueo
     - [☑️] Reestablecimiento
 - [☑️] Funcionalidad de asignación de proyectos
-- [  ] Funcionalidad de feedback del proyecto
+- [☑️] Funcionalidad de entregable del proyecto
+- [☑️] Funcionalidad de feedback del proyecto
 
 Consulte los  [open issues](https://github.com/github_username/repo_name/issues) para obtener una lista completa de los problemas conocidos.
 

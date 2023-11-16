@@ -4,7 +4,7 @@ import JoiDate from "@joi/date";
 const extendedJoi = Joi.extend(JoiDate);
 
 //Esquema de asignación
-const SchemaAssignment =   Joi.object ({
+export const SchemaAssignment =   Joi.object ({
     emailTeacher: Joi.string().required().min(8).max(32).email({minDomainSegments:2, tlds:{allow:["com","net"]}}),
     course: Joi.string().required(),
     name: Joi.string().required().min(3).max(100),
@@ -16,4 +16,7 @@ const SchemaAssignment =   Joi.object ({
     finishDate: extendedJoi.date().format("DD-MM-YYYY")
 })
 
-export default SchemaAssignment;
+export const schemaUpdate =   Joi.object ({
+  emailStudent: Joi.string().required().min(8).max(32).email({minDomainSegments:2, tlds:{allow:["com","net"]}}),
+  videoURL: Joi.string().required().uri().regex(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i),
+})

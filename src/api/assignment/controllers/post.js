@@ -1,5 +1,6 @@
-import Assignment from "../../../models/Assignment.js";
-import SchemaAssignment from "./validation.js";
+import mongoose from "mongoose"; 
+import Assignment from "../../../models/assignment.js";
+import { SchemaAssignment } from "./validation.js";
 import UserEV from "../../../models/user.js";
 
 function dateValidation (date) {
@@ -55,7 +56,7 @@ async function assignment(request, response, next) {
     })
 
     //Almacenamiento de la asignación
-    const saveAssignment = await newAssignment.save()
+    const saveAssignment = await Assignment.save()
     response.status(201).json({
       message:"Assigned Project",
       data: saveAssignment

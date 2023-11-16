@@ -1,4 +1,5 @@
-import Assignment from "../../../models/Assignment.js";
+import mongoose from "mongoose"; 
+import Assignment from "../../../models/assignment.js";
 
 //Listar
 const allProjects = async (request, response, next) => { 
