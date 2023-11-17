@@ -115,6 +115,16 @@
  *      schema:
  *        type: string
  *    - in: query
+ *      name: course
+ *      description: Query for course
+ *      schema:
+ *        type: string
+ *    - in: query
+ *      name: title
+ *      description: Query for title
+ *      schema:
+ *        type: string
+ *    - in: query
  *      name: qualified
  *      description: Query for qualified
  *      schema:

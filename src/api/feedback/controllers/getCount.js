@@ -5,12 +5,7 @@ import StudentsFeedback from "../../../models/feedback.js";
 const getCount = async (request, response, next) => { 
   try {
     const id = request.params.id
-    
-    console.log("Assignment ID:", id);
-
-    console.log(typeof id);
-    console.log(request.params);
-       
+        
     //Validación del id de la asignación
     if (!mongoose.isValidObjectId(id)) {
       return response.status(422).json({message: "Id Not Valid"})

@@ -3,7 +3,7 @@ import StudentsFeedback from "../../../models/feedback.js";
 
 //Listar
 const allDeliveries = async (request, response, next) => { 
-  const { assignmentId, emailStudent, email, qualified} = request.query;
+  const { assignmentId, emailStudent, email, course, title, qualified} = request.query;
 
   try {
      
@@ -11,6 +11,8 @@ const allDeliveries = async (request, response, next) => {
       ...assignmentId && { assignmentId },
       ...emailStudent && { emailStudent },
       ...email && { email },
+      ...course && { course },
+      ...title && { title },
       ...qualified && { qualified},
     }; 
 

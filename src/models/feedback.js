@@ -8,6 +8,12 @@ const studentsfeedbackSchema = new Schema({
     ref:"Assignment",
     required: true,
   },
+  course: {
+    type:String
+  },
+  title: {
+    type:String
+  },
   emailStudent:{
     type:String,
     required:true,

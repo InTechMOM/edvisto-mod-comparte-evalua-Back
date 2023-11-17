@@ -3,6 +3,7 @@ import UserEV from "../../../models/user.js";
 import StudentsFeedback from "../../../models/feedback.js";
 import Assignment from "../../../models/assignment.js";
 import { schemaDelivery } from "./validation.js";
+import assignment from "../../../models/assignment.js";
 
 async function delivery (request, response, next) {
   try {
@@ -23,8 +24,12 @@ async function delivery (request, response, next) {
     //El estudiante esta asignado
     const isAssigned = await Assignment.findOne({
       _id:assignmentId,
-      emailStudents: {$in: [emailStudent]}
-    });
+      emailStudents: {$in: [emailStudent]},
+    })
+      .select("course title")
+      .exec();
+
+
     
     if (!isAssigned) {
       return response.status(404).json({
@@ -43,8 +48,10 @@ async function delivery (request, response, next) {
     //Creación de entrega
     const delivery = await new StudentsFeedback({
       assignmentId : assignmentId,
+      course: isAssigned.course,
+      title: isAssigned.title,
       emailStudent,
-      videoURL
+      videoURL,
     });
 
     //Almacenamiento de la entrega
