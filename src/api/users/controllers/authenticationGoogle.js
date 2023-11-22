@@ -36,11 +36,23 @@ export async function registerGoogle(request, response, next) {
 
         //Almacenamiento en MongoDB del usuario
         const userCreated = await userMongoDB.save();
-          return response.status(201).json({
-            saved:("User Created and Authenticated"),
+
+        const rolWhich = await UserEV.findOne({email});
+
+        if (rolWhich) {
+          if (rolWhich.rol === "Soy Docente") {
+           return response.status(200).json({
+            saved:("Welcome teacher"),
             data: userCreated
-          })
-          
+          });
+
+          } else {
+            return response.status(200).json({
+              saved:("Welcome student"),
+              data: userCreated
+            });
+          }
+        }                  
       }
     
     } else {
