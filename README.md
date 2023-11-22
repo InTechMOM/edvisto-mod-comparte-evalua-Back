@@ -46,10 +46,10 @@
   <summary>Tabla de contenido</summary>
   <ol>
     <li>
-      <a href="#about-the-project">Sobre el proyecto</a>
+      <a href="#about-the-project">Acerca del proyecto</a>
       <ul>
         <li><a href="#functionalities">Funcionalidades</a></li>
-        <li><a href="#database-storage">Base de datos y almacenamiento de datos</a></li>
+        <li><a href="#database">Base de datos y almacenamiento de datos</a></li>
         <li><a href="#validation">Validación de Datos</a></li>
         <li><a href="#documentation">Documentación</a></li>
         <li><a href="#built-with">Tecnologías utilizadas</a></li>
@@ -75,6 +75,7 @@
 
 El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma educativa, EdVisto. Este módulo se enfoca en brindar a los usuarios una experiencia de registro y autenticación fluida, segura y eficiente, utilizando tanto una autenticación que implementa correo electrónico  y constraseña como la popular autenticación de Google. También se encarga  del flujo relacionado a la asignación y feedback de determinado proyecto desde la interfaz del usuario (Docente), garantizando que los datos del usuario se almacenen de manera confiable en nuestra base de datos no relacional de MongoDB.
 
+<!-- FUNTIONALITIES -->
 ### Funcionalidades
 
 **Registro de Usuarios:**
@@ -116,15 +117,22 @@ El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma ed
   
 **Feedback del video desarrollado:**
 
-- 😊📊 Feedback: Se implemento una funcionalidad encargada de gestionar el feedback desarrollado por el docente posterior al video entregable por cada estudiante, permitiendole tener una visualización de la cantidad de entregables faltantes por calificación y la adecuada retroalimentación del desarrollo del trabajo del estudiante de forma númerica  en 4 habilidades del Siglo XXI (colaboración, creatividad, comunicación y el pensamiento crítico) y de forma escrita por medio de un comentario.
+- 😊📊 Feedback: Se implemento una funcionalidad encargada de gestionar el feedback desarrollado por el docente posterior al video entregado por cada estudiante, y la adecuada retroalimentación del desarrollo del trabajo del estudiante de forma númerica  en 4 habilidades del Siglo XXI (colaboración, creatividad, comunicación y el pensamiento crítico) y de forma escrita por medio de un comentario.
 
 ![Product Name Screen Shot][product-screenshot5]
+
+También se introdujó una interfaz que perme tener una visualización de la cantidad de entregables faltantes por calificación, de forma desagregada en función de los "cursos" o del estado de claificación.
+
 ![Product Name Screen Shot][product-screenshot6]
+
+<!-- DATABASE -->
 
 ### Base de datos y almacenamiento de datos
 
 - Uso de Firebase Authentication: En cuanto a la autenticación, se implemento el servicio de Firebase (Autentication), que proporciona una experiencia segura y confiable para nuestros usuarios, permitiendo tener funciones como; la verificación del email, encriptamiento de la constraseña, reestablecimiento de la constraseña y conexión con proveedores externos de forma eficiente y relativamente al alcance.
 - Conexión con mongoDB como base de datos: Utilizamos MongoDB como nuestra base de datos no relacional para almacenar y gestionar la información del usuario. Brindando la flexibilidad y escalabilidad que queriamos obtener. 📊
+
+<!-- VALIDATION -->
 
 ### Validación de Datos
 
@@ -134,17 +142,23 @@ Nuestro modúlo implementó la validación de datos por medio de Joi, lo que gar
   npm install joi
   ```
 
+<!-- DOCUMENTATION -->
+
 ### Documentación
 
 La documentación completa está disponible a través de Swagger, sin embargo hemos documentado cada funcionalidad en carpetas separadas, para permitir su exploración detallada por medio de los siguientes enlaces.
 
 -[Registro y Autenticación tradicional y con proveedor Google]([enlace-documentacion](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/users/documentation/documentation.js)). 📚
+
 -[Asignación de proyectos]([enlace-documentacion](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/assignment/documentation/documentation.js)). 📚
+
 -[Entregable de proyectos y Feedback]([enlace-documentacion](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/feedback/documentation/documentation.js)). 📚
 
 Y de forma analoga se puede acceder a las rutas de las API o explorar la documentación representada en tu navegador por medio del siguiente enlace [Documentación_Swaggger](http://localhost:3000/docs/#/), al ejecutar el codigo de forma local.
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
+
+<!-- BUILT-WITH -->
 
 ### Tecnologías utilizadas
 
@@ -265,7 +279,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Agradecimientos
 
-* (Mentora) Marinellys Figueroa: [https://github.com/marinellysfigueroa](https://github.com/marinellysfigueroa)
+**Mentora (Marinellys Figueroa):** [https://github.com/marinellysfigueroa](https://github.com/marinellysfigueroa)
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
