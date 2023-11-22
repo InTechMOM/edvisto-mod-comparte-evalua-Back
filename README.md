@@ -158,7 +158,7 @@ También necesitarás las credenciales de la API de Firebase, que puedes obtener
 
 1. Clonar el repositorio
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/github_username/EDVISTO-MOD-COMPARTE-EVALUA-BACK.git
    ```
 2. Ve al directorio del proyecto
    ```sh
