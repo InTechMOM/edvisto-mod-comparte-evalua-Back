@@ -32,7 +32,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/">
-    <img src="images/edvisto.png" alt="Logo" width="257" height="79">
+    <img src="images/edvisto.png" alt="Logo">
   </a>
 
   <p align="center">
@@ -100,7 +100,13 @@ El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma ed
 
 - 📅✨ Asignación: Se implemento una funcionalidad que contempla una lectura y un procesamiento de datos como; curso, email del docente, nombre del proyecto, título del fenomeno, descripción, fechas de inicio y finalización, y recursos sugeridos por medio de URL (que pueden ser desde un link de Drive hasta un video de youtube). Para de forma seguida garantizar que ambas fechas suministradas se encuentren no antes del presente día de asignación, y finalmente se realiza el almacenamiento del proyecto.
 
-![Product Name Screen Shot][product-screenshot4]
+<div align="center">
+
+ <a href="https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/">
+    <img src="images/proyectos.png" alt="asignacion">
+  </a>
+
+</div>
 
 - 🔄🔍 Recuperación de proyectos: Se considera la funcionalidad para por medio de diversos parámetros suministrados como el; curso y email del docente, se pueda filtrar la creación de proyectos dentro de la base de datos.
 
@@ -282,6 +288,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [product-screenshot1]: images/registro.png
 [product-screenshot2]: images/ingreso.png
 [product-screenshot3]: images/reestablecimiento.png
-[product-screenshot4]: images/proyectos.png
 [product-screenshot5]: images/feedback1.png
 [product-screenshot6]: images/feedback2.png
