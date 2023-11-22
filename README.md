@@ -148,11 +148,11 @@ Nuestro modúlo implementó la validación de datos por medio de Joi, lo que gar
 
 La documentación completa está disponible a través de Swagger, sin embargo hemos documentado cada funcionalidad en carpetas separadas, para permitir su exploración detallada por medio de los siguientes enlaces.
 
--[Registro y Autenticación tradicional y con proveedor Google]([enlace-documentacion](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/users/documentation/documentation.js)). 📚
+-[Registro y Autenticación tradicional y con proveedor Google](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/users/documentation/documentation.js). 📚
 
--[Asignación de proyectos]([enlace-documentacion](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/assignment/documentation/documentation.js)). 📚
+-[Asignación de proyectos](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/assignment/documentation/documentation.js). 📚
 
--[Entregable de proyectos y Feedback]([enlace-documentacion](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/feedback/documentation/documentation.js)). 📚
+-[Entregable de proyectos y Feedback](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/feedback/documentation/documentation.js). 📚
 
 Y de forma analoga se puede acceder a las rutas de las API o explorar la documentación representada en tu navegador por medio del siguiente enlace [Documentación_Swaggger](http://localhost:3000/docs/#/), al ejecutar el codigo de forma local.
 
