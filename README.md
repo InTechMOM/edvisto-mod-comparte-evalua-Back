@@ -32,22 +32,12 @@
 <br />
 <div align="center">
   <a href="https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/">
-    <img src="images/edvisto.png" alt="Logo" width="80" height="80">
+    <img src="images/edvisto.png" alt="Logo" width="257" height="79">
   </a>
 
-<h3 align="center"> EdVisto </h3>
-  
   <p align="center">
-    La plataforma educativa "EdVisto" se plantea como solucion tecnologica e innovadora diseñada para revolucionar el proceso de enseñanza y aprendizaje.
+    La plataforma educativa "EdVisto" se plantea como una solución tecnologica e innovadora diseñada para revolucionar el proceso de enseñanza y aprendizaje por medio de la implementación de un aprendizaje basado en proyectos de video, con una integración con el método socratico; donde se fomenta el aprendizaje interactivo y critico.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
   </p>
 </div>
 
@@ -62,7 +52,7 @@
         <li><a href="#database-storage">Base de datos y almacenamiento de datos</a></li>
         <li><a href="#validation">Validación de Datos</a></li>
         <li><a href="#documentation">Documentación</a></li>
-        <li><a href="#built-with">Construido con</a></li>
+        <li><a href="#built-with">Tecnologías utilizadas</a></li>
       </ul>
     </li>
     <li>
@@ -72,11 +62,10 @@
         <li><a href="#installation">Instalación</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Uso</a></li>
     <li><a href="#roadmap">Mapa de Rutas</a></li>
     <li><a href="#contributing">Contribuyentes</a></li>
     <li><a href="#license">Licencia</a></li>
-    <li><a href="#contact">Contactos</a></li>
+    <li><a href="#contact">Contacto</a></li>
     <li><a href="#acknowledgments">Agradecimientos</a></li>
   </ol>
 </details>
@@ -84,7 +73,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Acerca del Proyecto
 
-El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma educativa, EdVisto. Este módulo se enfoca en brindar a los usuarios una experiencia de registro y autenticación fluida, segura y eficiente, utilizando tanto una autenticación que implementa correo electrónico  y constraseña como la popular autenticación de Google. También se encarga de garantizar que los datos del usuario se almacenen de manera confiable en nuestra base de datos no relacional de MongoDB.
+El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma educativa, EdVisto. Este módulo se enfoca en brindar a los usuarios una experiencia de registro y autenticación fluida, segura y eficiente, utilizando tanto una autenticación que implementa correo electrónico  y constraseña como la popular autenticación de Google. También se encarga  del flujo relacionado a la asignación y feedback de determinado proyecto desde la interfaz del usuario (Docente), garantizando que los datos del usuario se almacenen de manera confiable en nuestra base de datos no relacional de MongoDB.
 
 ### Funcionalidades
 
@@ -100,32 +89,40 @@ El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma ed
 
 - 🚪🔑 Inicio de sesión tradicional: Se desarrollo un método tradicional de inicio de sesión, donde los usuarios pueden ingresar su correo electrónico y contraseña para acceder a los servicios de la plataforma. 
 - 🔒🛡️ Protección contra intentos fallidos:  Considerando la  seguridad de nuestros usuarios, se implemento una funcionalidad que bloquea el inicio de sesión después de tres intentos fallidos. Garantizando que las cuentas estén protegidas contra accesos no autorizados. 
-- 📧🔑 Reestablecimiento de contraseña:  ¿Olvidaste tu contraseña? No te preocupes. Se habilito la opción de restablecimiento de contraseña, donde el usuario recibira un correo electrónico con un enlace para restablecer su contraseña de forma segura por medio de la pregunta de seguridad que suministro en la creación de la cuenta.  
 
 ![Product Name Screen Shot][product-screenshot2]
 
+- 📧🔑 Reestablecimiento de contraseña:  ¿Olvidaste tu contraseña? No te preocupes. Se habilito la opción de restablecimiento de contraseña, donde el usuario recibira un correo electrónico con un enlace para restablecer su contraseña de forma segura por medio del ingreso de la pregunta de seguridad que suministro en la creación de la cuenta, o como respuesta a un bloqueo automatico con anterioridad.
+
+![Product Name Screen Shot][product-screenshot3]
+
 **Asignaciones de proyectos:**
 
-- 📅✨ Asignación: Se implemento una funcionalidad que contempla una validación de datos, lectura y procesamiento de datos como; curso, email del docente, nombre del proyecto, título del fenomeno, descripción, fechas de inicio y finalización, y recursos sugeridos por medio de URL. Para de forma seguida garantizar que ambas fechas suministradas se encuentren no antes del presente día de asignación, y finalmente se realiza el almacenamiento del proyecto.
+- 📅✨ Asignación: Se implemento una funcionalidad que contempla una lectura y un procesamiento de datos como; curso, email del docente, nombre del proyecto, título del fenomeno, descripción, fechas de inicio y finalización, y recursos sugeridos por medio de URL (que pueden ser desde un link de Drive hasta un video de youtube). Para de forma seguida garantizar que ambas fechas suministradas se encuentren no antes del presente día de asignación, y finalmente se realiza el almacenamiento del proyecto.
+
+![Product Name Screen Shot][product-screenshot4]
 
 - 🔄🔍 Recuperación de proyectos: Se considera la funcionalidad para por medio de diversos parámetros suministrados como el; curso y email del docente, se pueda filtrar la creación de proyectos dentro de la base de datos.
 
 **Carga de video:**
 
-- 📤📅 Entregable: la funcionalidad de delivery, permite a los estudiantes dar respuesta a los proyectos asignados previamente por determinado docente, considerando de forma analoga la previsualización de estos entregables en la interfaz del docente.
+- 📤📅 Entregable: la funcionalidad de "delivery", permite a los estudiantes dar respuesta a los proyectos asignados previamente por determinado docente por medio de una url, considerando de forma analoga la previsualización de estos entregables en la interfaz del docente.
   
 **Feedback del video desarrollado:**
 
-- 😊📊 Feedback: Se implemento una funcionalidad encargada de gestionar el feedback desarrollado por el docente posterior al entregable por cada estudiante, por medio de una modificación a los documentos creados en flujos anteriores permitiendole tener una visualización de la cantidad de entregables faltantes por calificación y la adecuada retroalimentación del desarrollo del trabajo del estudiante de forma númerica y por comentario.
+- 😊📊 Feedback: Se implemento una funcionalidad encargada de gestionar el feedback desarrollado por el docente posterior al video entregable por cada estudiante, permitiendole tener una visualización de la cantidad de entregables faltantes por calificación y la adecuada retroalimentación del desarrollo del trabajo del estudiante de forma númerica  en 4 habilidades del Siglo XXI (colaboración, creatividad, comunicación y el pensamiento crítico) y de forma escrita por medio de un comentario.
+
+![Product Name Screen Shot][product-screenshot5]
+![Product Name Screen Shot][product-screenshot6]
 
 ### Base de datos y almacenamiento de datos
 
-- Uso de Firebase Authentication: En cuanto a la autenticación, se implemento el servicio de Firebase (Autentication), que proporciona una experiencia segura y confiable para nuestros usuarios. 
+- Uso de Firebase Authentication: En cuanto a la autenticación, se implemento el servicio de Firebase (Autentication), que proporciona una experiencia segura y confiable para nuestros usuarios, permitiendo tener funciones como; la verificación del email, encriptamiento de la constraseña, reestablecimiento de la constraseña y conexión con proveedores externos de forma eficiente y relativamente al alcance.
 - Conexión con mongoDB como base de datos: Utilizamos MongoDB como nuestra base de datos no relacional para almacenar y gestionar la información del usuario. Brindando la flexibilidad y escalabilidad que queriamos obtener. 📊
 
 ### Validación de Datos
 
-Nuestro modúlo implementó la validación de datos por medio de Joi, lo que garantiza que la información proporcionada por los usuarios sea correcta y cumpla con nuestros estándares, para el debido almacenamiento. ✅
+Nuestro modúlo implementó la validación de datos por medio de Joi, lo que garantiza que la información proporcionada por los usuarios sea correcta y cumpla con nuestros estándares, para el debido almacenamiento en la base de datos. ✅
 
   ```sh
   npm install joi
@@ -135,13 +132,15 @@ Nuestro modúlo implementó la validación de datos por medio de Joi, lo que gar
 
 La documentación completa está disponible a través de Swagger, sin embargo hemos documentado cada funcionalidad en carpetas separadas, para permitir su exploración detallada por medio de los siguientes enlaces.
 
--[Registro y Autenticación](enlace-documentacion). 📚
+-[Registro y Autenticación tradicional y con proveedor Google]([enlace-documentacion](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/users/documentation/documentation.js)). 📚
+-[Asignación de proyectos]([enlace-documentacion](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/assignment/documentation/documentation.js)). 📚
+-[Entregable de proyectos y Feedback]([enlace-documentacion](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/feedback/documentation/documentation.js)). 📚
 
-Y de forma analoga poder acceder a las rutas de las API o explorar la documentación representada en tu navegador por medio del siguiente enlace [Documentación_Swaggger](http://localhost:3000/docs/#/)
+Y de forma analoga se puede acceder a las rutas de las API o explorar la documentación representada en tu navegador por medio del siguiente enlace [Documentación_Swaggger](http://localhost:3000/docs/#/), al ejecutar el codigo de forma local.
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
-### Construido con
+### Tecnologías utilizadas
 
 [![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=JavaScript&color=white&style=border-color:#323330&width=40&height=40)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Node.js](https://img.shields.io/badge/Node.js-%233399FF?style=for-the-badge&logo=Node.js&color=white&style=border-color:#3399FF&width=40&height=40)](https://nodejs.org/es/)
@@ -204,18 +203,9 @@ C. Usando "npm" con "nodemon" para reiniciar automaticamente en cambios (Entorno
 
 La aplicación debería estar en funcionamiento en http://localhost:3000.
 
-Nota: Asegúrate de que tu aplicación de Firebase esté configurada correctamente con las reglas de seguridad adecuadas y las credenciales de Firebase en tu proyecto antes de ejecutar la aplicación localmente.
-
-
-<p align="right">(<a href="#readme-top">volver arriba</a>)</p>
-
-<!-- USAGE EXAMPLES -->
-## Usos
-
-
+Nota: Asegúrate de que tu proyecto de Firebase esté configurado correctamente con lo concerniente a las reglas de seguridad adecuadas y las respectivas credenciales antes de ejecutar la aplicación localmente, para asegurarte que todo se ejecute de forma correcta.
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
-
 
 <!-- ROADMAP -->
 ## Mapa de Ruta
@@ -229,8 +219,6 @@ Nota: Asegúrate de que tu aplicación de Firebase esté configurada correctamen
 - [☑️] Funcionalidad de asignación de proyectos
 - [☑️] Funcionalidad de entregable del proyecto
 - [☑️] Funcionalidad de feedback del proyecto
-
-Consulte los  [open issues](https://github.com/github_username/repo_name/issues) para obtener una lista completa de los problemas conocidos.
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
@@ -266,14 +254,12 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 - [![Correo electrónico](https://img.shields.io/badge/Correo%20electrónico-%230077B5?logo=gmail&color=0077B5)](mailto:angiedylexx@gmail.com)
 - [![GitHub](https://img.shields.io/badge/GitHub-%230077B5?logo=github&color=0077B5)](https://github.com/Angiedylexx)
 
-Enlace del proyecto: [https://github.com/InTechMOM/edvisto-mod-comparte-evalua-Back](https://github.com/InTechMOM/edvisto-mod-comparte-evalua-Back)
-
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Agradecimientos
 
-* Marinellys Figueroa: [https://github.com/marinellysfigueroa](https://github.com/marinellysfigueroa)
+* (Mentora) Marinellys Figueroa: [https://github.com/marinellysfigueroa](https://github.com/marinellysfigueroa)
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
@@ -295,4 +281,7 @@ Enlace del proyecto: [https://github.com/InTechMOM/edvisto-mod-comparte-evalua-B
 [linkedin-url]: https://www.linkedin.com/in/carolinarbackendingenieriamecanica/
 [product-screenshot1]: images/registro.png
 [product-screenshot2]: images/ingreso.png
-[product-screenshot2]: images/asignacion.png
+[product-screenshot3]: images/reestablecimiento.png
+[product-screenshot4]: images/proyectos.png
+[product-screenshot5]: images/feedback1.png
+[product-screenshot6]: images/feedback2.png
