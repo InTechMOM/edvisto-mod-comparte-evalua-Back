@@ -11,8 +11,6 @@
 ***¡Gracias de nuevo! ¡Ahora ve a crear algo INCREÍBLE! :D
 -->
 
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** Estoy usando markdown "reference style" enlaces para facilitar la lectura.
@@ -21,6 +19,8 @@
 *** para URL de contribuyentes, URL de forks, etc. Esta es una sintaxis concisa y opcional que puede utilizar.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
+[![Author][author-shield]][author-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -28,41 +28,31 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/">
+    <img src="images/edvisto.png" alt="Logo">
   </a>
 
-<h3 align="center">project_title</h3>
-
   <p align="center">
-    project_description
+    La plataforma educativa "EdVisto" se plantea como una solución tecnologica e innovadora diseñada para revolucionar el proceso de enseñanza y aprendizaje por medio de la implementación de un aprendizaje basado en proyectos de video, con una integración con el método socratico; donde se fomenta el aprendizaje interactivo y critico.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Tabla de contenido</summary>
   <ol>
     <li>
-      <a href="#about-the-project">Sobre el proyecto</a>
+      <a href="#about-the-project">Acerca del proyecto</a>
       <ul>
-        <li><a href="#built-with">Construido con</a></li>
+        <li><a href="#functionalities">Funcionalidades</a></li>
+        <li><a href="#database">Base de datos y almacenamiento de datos</a></li>
+        <li><a href="#validation">Validación de Datos</a></li>
+        <li><a href="#documentation">Documentación</a></li>
+        <li><a href="#built-with">Tecnologías utilizadas</a></li>
       </ul>
     </li>
     <li>
@@ -72,103 +62,185 @@
         <li><a href="#installation">Instalación</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Uso</a></li>
     <li><a href="#roadmap">Mapa de Rutas</a></li>
     <li><a href="#contributing">Contribuyentes</a></li>
     <li><a href="#license">Licencia</a></li>
-    <li><a href="#contact">Contactos</a></li>
+    <li><a href="#contact">Contacto</a></li>
     <li><a href="#acknowledgments">Agradecimientos</a></li>
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## Acerca del Proyecto
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma educativa, EdVisto. Este módulo se enfoca en brindar a los usuarios una experiencia de registro y autenticación fluida, segura y eficiente, utilizando tanto una autenticación que implementa correo electrónico  y constraseña como la popular autenticación de Google. También se encarga  del flujo relacionado a la asignación y feedback de determinado proyecto desde la interfaz del usuario (Docente), garantizando que los datos del usuario se almacenen de manera confiable en nuestra base de datos no relacional de MongoDB.
 
-Aquí tienes una plantilla en blanco para empezar: Para evitar volver a escribir demasiada información. Haga una búsqueda y reemplace con su editor de texto lo siguiente: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+<!-- FUNTIONALITIES -->
+### Funcionalidades
+
+**Registro de Usuarios:**
+
+- ✍️📋 Creación de cuentas de usuarios: ¡Nuestra plataforma permite a los usuarios registrarse fácilmente! A través de un sencillo formulario que contempla (Nombre, apellido, fecha de nacimiento, correo electronico, contraseña  y pregunta de seguridad), donde los usuarios pueden proporcionar su información personal y crear sus cuentas de usuario. 
+- 🌐🔑 Autenticación con Google: Se desarrollo la opción de autenticación utilizando cuentas de Google. Con solo un clic, los usuarios pueden tanto registrarse como ingresar rápidamente y sin complicaciones. 
+- 📧🔒 Verificación de la cuenta a través del correo electronico: Para garantizar la seguridad y la autenticidad de las cuentas de nuestros usuarios, enviamos un correo electrónico de verificación a cada usuario registrado. Con solo un clic en el enlace, ¡la cuenta queda verificada! 
+
+![Product Name Screen Shot][product-screenshot1]
+
+**Ingreso de Usuarios:**
+
+- 🚪🔑 Inicio de sesión tradicional: Se desarrollo un método tradicional de inicio de sesión, donde los usuarios pueden ingresar su correo electrónico y contraseña para acceder a los servicios de la plataforma. 
+- 🔒🛡️ Protección contra intentos fallidos:  Considerando la  seguridad de nuestros usuarios, se implemento una funcionalidad que bloquea el inicio de sesión después de tres intentos fallidos. Garantizando que las cuentas estén protegidas contra accesos no autorizados. 
+
+![Product Name Screen Shot][product-screenshot2]
+
+- 📧🔑 Reestablecimiento de contraseña:  ¿Olvidaste tu contraseña? No te preocupes. Se habilito la opción de restablecimiento de contraseña, donde el usuario recibira un correo electrónico con un enlace para restablecer su contraseña de forma segura por medio del ingreso de la pregunta de seguridad que suministro en la creación de la cuenta, o como respuesta a un bloqueo automatico con anterioridad.
+
+![Product Name Screen Shot][product-screenshot3]
+
+**Asignaciones de proyectos:**
+
+- 📅✨ Asignación: Se implemento una funcionalidad que contempla una lectura y un procesamiento de datos como; curso, email del docente, nombre del proyecto, título del fenomeno, descripción, fechas de inicio y finalización, y recursos sugeridos por medio de URL (que pueden ser desde un link de Drive hasta un video de youtube). Para de forma seguida garantizar que ambas fechas suministradas se encuentren no antes del presente día de asignación, y finalmente se realiza el almacenamiento del proyecto.
+
+<div align="center">
+
+ <a href="https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/">
+    <img src="images/proyectos.png" alt="asignacion">
+  </a>
+
+</div>
+
+- 🔄🔍 Recuperación de proyectos: Se considera la funcionalidad para por medio de diversos parámetros suministrados como el; curso y email del docente, se pueda filtrar la creación de proyectos dentro de la base de datos.
+
+**Carga de video:**
+
+- 📤📅 Entregable: la funcionalidad de "delivery", permite a los estudiantes dar respuesta a los proyectos asignados previamente por determinado docente por medio de una url, considerando de forma analoga la previsualización de estos entregables en la interfaz del docente.
+  
+**Feedback del video desarrollado:**
+
+- 😊📊 Feedback: Se implemento una funcionalidad encargada de gestionar el feedback desarrollado por el docente posterior al video entregado por cada estudiante, y la adecuada retroalimentación del desarrollo del trabajo del estudiante de forma númerica  en 4 habilidades del Siglo XXI (colaboración, creatividad, comunicación y el pensamiento crítico) y de forma escrita por medio de un comentario.
+
+![Product Name Screen Shot][product-screenshot5]
+
+También se introdujó una interfaz que perme tener una visualización de la cantidad de entregables faltantes por calificación, de forma desagregada en función de los "cursos" o del estado de claificación.
+
+![Product Name Screen Shot][product-screenshot6]
+
+<!-- DATABASE -->
+
+### Base de datos y almacenamiento de datos
+
+- Uso de Firebase Authentication: En cuanto a la autenticación, se implemento el servicio de Firebase (Autentication), que proporciona una experiencia segura y confiable para nuestros usuarios, permitiendo tener funciones como; la verificación del email, encriptamiento de la constraseña, reestablecimiento de la constraseña y conexión con proveedores externos de forma eficiente y relativamente al alcance.
+- Conexión con mongoDB como base de datos: Utilizamos MongoDB como nuestra base de datos no relacional para almacenar y gestionar la información del usuario. Brindando la flexibilidad y escalabilidad que queriamos obtener. 📊
+
+<!-- VALIDATION -->
+
+### Validación de Datos
+
+Nuestro modúlo implementó la validación de datos por medio de Joi, lo que garantiza que la información proporcionada por los usuarios sea correcta y cumpla con nuestros estándares, para el debido almacenamiento en la base de datos. ✅
+
+  ```sh
+  npm install joi
+  ```
+
+<!-- DOCUMENTATION -->
+
+### Documentación
+
+La documentación completa está disponible a través de Swagger, sin embargo hemos documentado cada funcionalidad en carpetas separadas, para permitir su exploración detallada por medio de los siguientes enlaces.
+
+-[Registro y Autenticación tradicional y con proveedor Google](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/users/documentation/documentation.js). 📚
+
+-[Asignación de proyectos](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/assignment/documentation/documentation.js). 📚
+
+-[Entregable de proyectos y Feedback](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/feedback/documentation/documentation.js). 📚
+
+Y de forma analoga se puede acceder a las rutas de las API o explorar la documentación representada en tu navegador por medio del siguiente enlace [Documentación_Swaggger](http://localhost:3000/docs/#/), al ejecutar el codigo de forma local.
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
+<!-- BUILT-WITH -->
 
+### Tecnologías utilizadas
 
-### Construido con
-
-Borra la tecnología o agrega segun la tecnología que utilices
-
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+[![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=JavaScript&color=white&style=border-color:#323330&width=40&height=40)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Node.js](https://img.shields.io/badge/Node.js-%233399FF?style=for-the-badge&logo=Node.js&color=white&style=border-color:#3399FF&width=40&height=40)](https://nodejs.org/es/)
+[![NPM](https://img.shields.io/badge/NPM-%23EA4335?style=for-the-badge&logo=NPM&color=white&style=border-color:#EA4335&width=40&height=40)](https://www.npmjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-%23589636?style=for-the-badge&logo=MongoDB&color=white&style=border-color:#589636&width=40&height=40)](https://www.mongodb.org/)
+[![Firebase](https://img.shields.io/badge/Firebase-%23AA44BB?style=for-the-badge&logo=Firebase&color=white&style=border-color:#AA44BB&width=40&height=40)](https://firebase.google.com/)
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Guia de inicial
 
-Este es un ejemplo de cómo puede dar instrucciones sobre cómo configurar su proyecto localmente.
-Para poner en funcionamiento una copia local, siga estos sencillos pasos de ejemplo.
+Para poner en funcionamiento una copia local, sigue estos sencillos pasos.
 
 ### Prerequisitos
 
-Este es un ejemplo de cómo enumerar los elementos necesarios para utilizar el software y cómo instalarlos.
-* npm
+Asegúrate de tener instalados los siguientes elementos antes de comenzar
+
+- [Node.js] (https://nodejs.org/) (versión 18.14.1)
+- [npm] (https://www.npmjs.com/)
+
   ```sh
   npm install npm@latest -g
   ```
 
+También necesitarás las credenciales de la API de Firebase, que puedes obtener siguiendo su respectiva  [Documentación_Firebase] (https://firebase.google.com/docs/auth?hl=es-419).
+
 ### Instalacion
 
-1. Obtenga una clave API gratuita en  [https://example.com](https://example.com)
-2. Clonar el repositorio
+1. Clonar el repositorio
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/github_username/EDVISTO-MOD-COMPARTE-EVALUA-BACK.git
+   ```
+2. Ve al directorio del proyecto
+   ```sh
+   cd EDVISTO-MOD-COMPARTE-EVALUA-BACK
    ```
 3. Instalar paquetes NPM
    ```sh
    npm install
    ```
-4. Ingrese su API en `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+4. Crea un archivo ".env" en la raíz del proyecto y configura las variables de entorno necesarias. Puedes consultar el archivo ".env.sample" para obtener un ejemplo de como configurar estas variables.
+   
+5. Ejecuta la aplicación:
+
+Puedes iniciar la aplicación de una de las siguientes maneras:
+
+A. Usando npm (Recomendado para entorno de producción):
+   ```sh
+   npm start
+   ```
+B. Usando Node.js directamente
+   ```sh
+   node app.js
+   ```
+C. Usando "npm" con "nodemon" para reiniciar automaticamente en cambios (Entorno de desarrollor)
+   ```sh
+   npm run dev
    ```
 
-<p align="right">(<a href="#readme-top">volver arriba</a>)</p>
+La aplicación debería estar en funcionamiento en http://localhost:3000.
 
-
-
-<!-- USAGE EXAMPLES -->
-## Usos
-
-Utilice este espacio para mostrar ejemplos útiles de cómo se puede utilizar un proyecto. Las capturas de pantalla, ejemplos de código y demostraciones adicionales funcionan bien en este espacio. También puede vincular a más recursos.
-
-_Para obtener más ejemplos, consulte la [Documentation](https://example.com)
+Nota: Asegúrate de que tu proyecto de Firebase esté configurado correctamente con lo concerniente a las reglas de seguridad adecuadas y las respectivas credenciales antes de ejecutar la aplicación localmente, para asegurarte que todo se ejecute de forma correcta.
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
-
-
 
 <!-- ROADMAP -->
 ## Mapa de Ruta
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-Consulte los  [open issues](https://github.com/github_username/repo_name/issues) para obtener una lista completa de las funciones propuestas (y problemas conocidos).
+- [☑️] Funcionalidad de registro de usuarios
+- [☑️] Funcionalidad de inicio de sesion
+    - [☑️] Tradicional
+    - [☑️] Con proveedor Google
+    - [☑️] Bloqueo
+    - [☑️] Reestablecimiento
+- [☑️] Funcionalidad de asignación de proyectos
+- [☑️] Funcionalidad de entregable del proyecto
+- [☑️] Funcionalidad de feedback del proyecto
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
-
-
 
 <!-- CONTRIBUTING -->
 ## Contribuidores
@@ -186,8 +258,6 @@ Si tiene alguna sugerencia que pueda mejorar esto, bifurque el repositorio y cre
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
-
-
 <!-- LICENSE -->
 ## Licencia
 
@@ -195,61 +265,42 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
-
-
 <!-- CONTACT -->
 ## Contactos
 
-Su nombre - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+**Autor (Angie Carolina Reyes)**
 
-Enlace del proyecto: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+- [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5?logo=linkedin&color=0077B5)](https://www.linkedin.com/in/carolinarbackendingenieriamecanica/)
+- [![Correo electrónico](https://img.shields.io/badge/Correo%20electrónico-%230077B5?logo=gmail&color=0077B5)](mailto:angiedylexx@gmail.com)
+- [![GitHub](https://img.shields.io/badge/GitHub-%230077B5?logo=github&color=0077B5)](https://github.com/Angiedylexx)
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Agradecimientos
 
-* []()
-* []()
-* []()
+**Mentora (Marinellys Figueroa):** [https://github.com/marinellysfigueroa](https://github.com/marinellysfigueroa)
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[author-shield]: https://img.shields.io/badge/author-AngieReyes-brightgreen.svg?style=for-the-badge
+[author-url]: https://github.com/Angiedylexx
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
 [contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
+[forks-url]: https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/
 [stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
 [stars-url]: https://github.com/github_username/repo_name/stargazers
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
 [issues-url]: https://github.com/github_username/repo_name/issues
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[license-url]: https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
-
-
-
+[linkedin-url]: https://www.linkedin.com/in/carolinarbackendingenieriamecanica/
+[product-screenshot1]: images/registro.png
+[product-screenshot2]: images/ingreso.png
+[product-screenshot3]: images/reestablecimiento.png
+[product-screenshot5]: images/feedback1.png
+[product-screenshot6]: images/feedback2.png
