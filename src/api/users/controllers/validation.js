@@ -12,8 +12,8 @@ let valuesSecurityQuestions=[
 
 // Esquema Registro
 export const schemaRegister = Joi.object ({
-  name: Joi.string().min(3).max(15).strict().required(),
-  lastName: Joi.string().min(3).max(15).strict().required(),
+  name: Joi.string().min(3).max(50).strict().required(),
+  lastName: Joi.string().min(3).max(50).strict().required(),
   birthdayDate: extendedJoi.date().format("DD-MM-YYYY"), 
   email: Joi.string().min(8).max(32).email({minDomainSegments:2, tlds:{allow:["com","net"]}}).required(),
   password: Joi.string().min(6).max(20).pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).*$/).required(),
