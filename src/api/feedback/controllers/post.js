@@ -3,24 +3,18 @@ import UserEV from "../../../models/user.js";
 import StudentsFeedback from "../../../models/feedback.js";
 import Assignment from "../../../models/assignment.js";
 import { schemaDelivery } from "./validation.js";
-import assignment from "../../../models/assignment.js";
+import isValidObjectId from "../../utils/valid.js"
+import validData from "../../utils/validData.js"
 
 async function delivery (request, response, next) {
   try {
     const { emailStudent, videoURL } = request.body;
     const assignmentId = request.params.id
 
-    //Validación de datos
-    const {error} = schemaDelivery.validate(request.body);
-    if (error) { 
-      return response.status(422).json({error: error.details[0].message}) 
-    }
+    validData(schemaDelivery, response, request);
 
-    //Validación del id de la asignación
-    if (!mongoose.isValidObjectId(assignmentId)) {
-      return response.status(422).json({message: "Id Not Valid"})
-    }
- 
+    isValidObjectId(assignmentId, response);
+     
     //El estudiante esta asignado
     const isAssigned = await Assignment.findOne({
       _id:assignmentId,
@@ -28,8 +22,6 @@ async function delivery (request, response, next) {
     })
       .select("course title")
       .exec();
-
-
     
     if (!isAssigned) {
       return response.status(404).json({

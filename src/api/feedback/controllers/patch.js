@@ -1,10 +1,11 @@
 import mongoose from "mongoose"; 
 import StudentsFeedback from "../../../models/feedback.js"
 import { schemaFeedback } from "./validation.js";
+import isValidObjectId from "../../utils/valid.js"
 
 async function studentFeedback(request, response, next) {
   try {
-    const id = request.params.id
+    const id = request.params.id //Id de entregable
 
     //Validación de datos
     const { error, value } = schemaFeedback.validate(request.body);
@@ -17,10 +18,7 @@ async function studentFeedback(request, response, next) {
     return response.status(400).json({error: error.details[0].message}) 
     }
     
-    //Validación de existencia del id de la asiganción
-    if (!mongoose.isValidObjectId(id)) {
-      return response.status(422).json({message: "Id Not Valid"})
-    }
+    isValidObjectId(id, response)
  
     //feedback
     const feedback = await StudentsFeedback.findByIdAndUpdate(id , {feedback:request.body.feedback, qualified:true} , {new:true});

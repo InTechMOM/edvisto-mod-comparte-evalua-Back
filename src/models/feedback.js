@@ -51,7 +51,7 @@ const studentsfeedbackSchema = new Schema({
         min:0,
         max:5
       },
-      critical_thinking: {
+      criticalThinking: {
         type:Number,
         min:0,
         max:5

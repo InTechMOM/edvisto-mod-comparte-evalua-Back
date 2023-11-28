@@ -14,7 +14,7 @@ export const schemaFeedback = Joi.object ({
       communication: Joi.number().required().min(0).max(5),
       collaboration: Joi.number().required().min(0).max(5),
       creativity: Joi.number().required().min(0).max(5),
-      critical_thinking: Joi.number().required().min(0).max(5)
+      criticalThinking: Joi.number().required().min(0).max(5)
     },
     comment: Joi.string()})
 })

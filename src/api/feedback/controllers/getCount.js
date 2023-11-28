@@ -1,15 +1,13 @@
 import mongoose from "mongoose"; 
 import StudentsFeedback from "../../../models/feedback.js";
+import isValidObjectId from "../../utils/valid.js"
 
 //Listar
 const getCount = async (request, response, next) => { 
   try {
-    const id = request.params.id
-        
-    //Validación del id de la asignación
-    if (!mongoose.isValidObjectId(id)) {
-      return response.status(422).json({message: "Id Not Valid"})
-    }
+    const id = request.params.id //Id de proyectos (assignmentId)
+
+    isValidObjectId(id, response)
  
     //Cantidad de projectos entregados calificados por asignación
     const qualifiedCount = await StudentsFeedback.countDocuments({

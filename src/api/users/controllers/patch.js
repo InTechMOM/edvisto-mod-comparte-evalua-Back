@@ -18,7 +18,8 @@ try {
 
   if(user.securityResponse !== securityResponse) {
     return response.status(403).json({ error:"Incorrect security response"})}
-  //Envio de correo de reestablecimiento
+
+  //Envio de correo de reestablecimiento (comentado para pruebas, evitando spam)
   //await sendPasswordResetEmail(auth, email);
 
   return response.status(200).json({ error:"A password reset email has been sent"})

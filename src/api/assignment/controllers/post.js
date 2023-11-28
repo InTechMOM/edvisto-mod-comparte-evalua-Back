@@ -2,29 +2,27 @@ import mongoose from "mongoose";
 import Assignment from "../../../models/assignment.js";
 import { SchemaAssignment } from "./validation.js";
 import UserEV from "../../../models/user.js";
+import validData from "../../utils/validData.js"
+import partsDate from "../../utils/date.js"
 
 function dateValidation (date) {
   const currentDate = new Date();
-  const dateParts = date.split("-");
-  if (dateParts.length === 3) {
-    const [day, month, year] = dateParts;
+
+  const dateInfo = partsDate(date);
+    const {day, month, year} = dateInfo;
     const inputDate = new Date(year, month - 1, day); //enero = 0
+
     if (inputDate >= currentDate) {
       return `${year}-${month}-${day}T00:00:00.000Z`;
     } else {
       throw new Error("Invalid date");
     }
-  }
 }
 
 async function assignment(request, response, next) {
   try {
 
-    //Validación
-    const {error} = SchemaAssignment.validate(request.body);
-    if (error) { 
-    return response.status(400).json({error: error.details[0].message}) 
-    }
+    validData(SchemaAssignment, response, request);
 
     //Lectura de datos
     const { course, emailTeacher, name, title, descriptión, emailStudents, resourcesURL, startDate, finishDate} = request.body;
@@ -46,8 +44,8 @@ async function assignment(request, response, next) {
     const newAssignment = new Assignment ({
       emailTeacher, 
       course,
-      name,
-      title, 
+      name : name.toUpperCase(),
+      title : title.toUpperCase(), 
       descriptión, 
       emailStudents,
       resourcesURL,
@@ -56,7 +54,7 @@ async function assignment(request, response, next) {
     })
 
     //Almacenamiento de la asignación
-    const saveAssignment = await Assignment.save()
+    const saveAssignment = await newAssignment.save()
     response.status(201).json({
       message:"Assigned Project",
       data: saveAssignment

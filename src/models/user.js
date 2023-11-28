@@ -1,7 +1,7 @@
 import { Schema, model, SchemaTypes } from "mongoose";
 
-let values_roles=["Soy Estudiante", "Soy Docente"];
-let values_securityQuestions=[
+let valuesRoles=["Soy Estudiante", "Soy Docente"];
+let valuesSecurityQuestions=[
   "Nombre de tu mascota",
   "Animal favorito", 
   "Nombre de tu abuelo"
@@ -11,7 +11,7 @@ const userSchema = new Schema({
   name: {
     type:String,
     minlength:[3,"La cadena es más corta de la requerida"],
-    maxlength:15
+    maxlength:30
   },
   lastName: {
     type:String,
@@ -58,7 +58,7 @@ const userSchema = new Schema({
   securityQuestion:{
     type:String,
     enum:{
-    values: values_securityQuestions,message:"Opción no valida"}
+    values: valuesSecurityQuestions,message:"Opción no valida"}
   },
   securityResponse:{
     type:String,
@@ -68,7 +68,7 @@ const userSchema = new Schema({
   rol: {
     type:String,
     enum:{
-    values: values_roles,message:"Opción no valida"}
+    values: valuesRoles,message:"Opción no valida"}
   },
   acceptedTerms: {
     type: Boolean

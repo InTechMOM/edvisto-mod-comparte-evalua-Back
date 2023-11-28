@@ -2,6 +2,7 @@ import auth from "../../../config/firebase.js";
 import UserEV from "../../../models/user.js";
 import adminFB from "../../../config/firebaseAdmin.js";
 import { signOut } from "firebase/auth";
+import authorizationRol from "../../utils/authorizationRol.js"
 
 export async function registerGoogle(request, response, next) {
   try {
@@ -26,7 +27,6 @@ export async function registerGoogle(request, response, next) {
           message:"User Authenticated",
         })
       } else {
-
         //Creación de usuario en MongoDB
         const userMongoDB = new UserEV({
           uid,
@@ -38,23 +38,9 @@ export async function registerGoogle(request, response, next) {
         const userCreated = await userMongoDB.save();
 
         const rolWhich = await UserEV.findOne({email});
-
-        if (rolWhich) {
-          if (rolWhich.rol === "Soy Docente") {
-           return response.status(200).json({
-            saved:("Welcome teacher"),
-            data: userCreated
-          });
-
-          } else {
-            return response.status(200).json({
-              saved:("Welcome student"),
-              data: userCreated
-            });
-          }
-        }                  
+        authorizationRol(rolWhich, response, userCreated);
       }
-    
+
     } else {
       return response.status(400).json("It was not possible to authenticate the user");
     }

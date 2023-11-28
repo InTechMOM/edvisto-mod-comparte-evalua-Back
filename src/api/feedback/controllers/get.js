@@ -1,7 +1,7 @@
 import mongoose from "mongoose"; 
 import StudentsFeedback from "../../../models/feedback.js";
 
-//Listar
+//Listar proyectos creados por docente
 const allDeliveries = async (request, response, next) => { 
   const { assignmentId, emailStudent, email, course, title, qualified} = request.query;
 

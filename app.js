@@ -3,7 +3,7 @@ import cors from "cors";
 import { port } from "./src/config/index.js"; 
 import "./src/config/dbConnection.js"; 
 import bodyParser from "body-parser"; 
-import middlewareErrors from "./src/api/errors/errors.js";
+import middlewareErrors from "./src/api/utils/errors.js";
 import usersRouter from "./src/api/users/routers/index.js";
 import assignmentRouter from "./src/api/assignment/routers/index.js";
 import deliveryRouter from "./src/api/feedback/routers/index.js";

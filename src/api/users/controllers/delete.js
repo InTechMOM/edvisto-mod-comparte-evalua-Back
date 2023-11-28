@@ -2,16 +2,14 @@ import mongoose from "mongoose";
 import UserEV from "../../../models/user.js";
 import auth from "../../../config/firebase.js";
 import adminFB from "../../../config/firebaseAdmin.js";
+import isValidObjectId from "../../utils/valid.js"
 
 const userDelete = async (request, response, next) => { 
   const id = request.params.id
 
   try { 
     
-    //Lectura del id del usuario (MongoDB)
-    if (!mongoose.isValidObjectId(id)) {
-      return response.status(422).json({message: "Id Not Valid" });
-    }
+    isValidObjectId(id, response);
 
     //Busqueda del usario y eliminación
     const usertoDelete = await UserEV.findById(id);

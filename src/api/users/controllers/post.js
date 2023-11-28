@@ -2,6 +2,8 @@ import UserEV from "../../../models/user.js";
 import { schemaRegister } from "./validation.js";
 import auth from "../../../config/firebase.js";
 import {createUserWithEmailAndPassword, sendEmailVerification} from "firebase/auth";
+import validData from "../../utils/validData.js"
+import partsDate from "../../utils/date.js"
 
 //Registro de usuario en firebase
 async function registerFirebase(request) {
@@ -12,7 +14,7 @@ async function registerFirebase(request) {
       const userFB = userFirebase.user;
       console.log("Usuario registrado en firebase");
       
-      //Envió de correo de verificación
+      //Envio de correo de verificación (comentado para pruebas, evitando spam)
       //await sendEmailVerification(userFB); //Activar si se va a hacer prueba respectiva
       console.log("Envio correo de verificación");
       return userFB;
@@ -28,11 +30,8 @@ async function registerFirebase(request) {
 export const registerMongoDB = async (request, response, next) => { 
 
 //Registro 
-  //Validacion de todos los datos ingresados
-  const {error} = schemaRegister.validate(request.body);
-  if (error) { 
-    return response.status(422).json({error: error.details[0].message}) 
-  }
+
+  validData(schemaRegister, response, request);
 
   try {
 
@@ -50,9 +49,8 @@ export const registerMongoDB = async (request, response, next) => {
       return response.status(409).json({error:"The password do not match"})
     } else {
 
-    const dateParts = birthdayDate.split("-");
-    if (dateParts.length === 3) {
-      const [day, month, year] = dateParts; // Es un array
+    const dateInfo = partsDate(birthdayDate, response);
+      const {day, month, year} = dateInfo;
       const isoDate =`${year}-${month}-${day}T00:00:00.000Z`; // comillas simples para interpolar variablesj
       
       const userFB = await registerFirebase(request);
@@ -70,16 +68,13 @@ export const registerMongoDB = async (request, response, next) => {
         acceptedTerms,
         course
       });
-    
+
       //Almacenamiento en MongoDB del usuario
       const userCreated = await userMongoDB.save();
         response.status(201).json({
           message:"User created and stored successfully",
           data: userCreated
         })  
-    } else {
-      return response.status(422).json({error:"wrong date format"});
-    }
   }
   } catch (error) { 
       if (error.code === 11000 || error.keyPattern || error.keyValue) {

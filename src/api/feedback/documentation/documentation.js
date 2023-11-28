@@ -39,7 +39,7 @@
 *                      creativity:
 *                        type: number
 *                        description: "Creativity skills rating (0-5)."
-*                      critical_thinking:
+*                      criticalThinking:
 *                        type: number
 *                        description: "Critical thinking skills rating (0-5)."
 *                  comment:
@@ -206,7 +206,7 @@
  *           communication: 4
  *           collaboration: 5
  *           creativity: 5
- *           critical_thinking: 5
+ *           criticalThinking: 5
  *         comment: "Lo estas haciendo excelente, sigue así"
  *   responses:
  *    201:
