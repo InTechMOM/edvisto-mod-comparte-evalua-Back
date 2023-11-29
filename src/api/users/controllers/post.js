@@ -82,8 +82,11 @@ export const registerMongoDB = async (request, response, next) => {
       if (error.code === mongoDBEmailDuplicate || error.keyPattern || error.keyValue) {
       console.log(error);
       return response.status(409).json({error:"email is assigned to another user"});
-    } 
-    next (error);
+      } else if (error.message === "Invalid date" || error.message === "Wrong date format") {
+        return response.status(400).json("Invalid date. The start/end date must be equal to or later than the current date.");
+      } else {
+      next (error)
+      } 
   };
 }
 

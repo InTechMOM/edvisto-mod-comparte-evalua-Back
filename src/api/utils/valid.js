@@ -1,9 +1,10 @@
 //Validación de id
 import mongoose from "mongoose"; 
 
-function isValidObjectId(id, response) {
+function isValidObjectId(id) {
   if (!mongoose.isValidObjectId(id)) {
-  return response.status(422).json({message: "Id Not Valid"});}
+  throw new Error ("Id Not Valid");
+  }
 }
 
 export default isValidObjectId;

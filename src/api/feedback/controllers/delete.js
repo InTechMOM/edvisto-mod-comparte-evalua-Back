@@ -6,7 +6,7 @@ const deliveryDelete = async (request, response, next) => {
   const id = request.params.id //Id de feedback
 
   try { 
-    isValidObjectId(id, response)
+    isValidObjectId(id)
     
      const deliveryDeleteId = await StudentsFeedback.findByIdAndDelete(id);
      if (!deliveryDeleteId) {
@@ -17,9 +17,17 @@ const deliveryDelete = async (request, response, next) => {
         message:"Delivery successfully deleted",
         data: deliveryDeleteId
      })
-   } catch (error) { 
-     next (error);
-   };
+   } catch (error) {
+
+    if (error.message === 'Id Not Valid'){
+      return response.status(400).json({
+        message:"Id Not Valid"
+      });
+
+    } else {
+    next (error);
+    };
  }
+}
 
 export default deliveryDelete;

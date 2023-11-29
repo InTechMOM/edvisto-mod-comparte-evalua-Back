@@ -65,9 +65,10 @@ async function assignment(request, response, next) {
   } catch (error) {
     if (error.message === "Invalid date" || error.message === "Wrong date format") {
       return response.status(400).json("Invalid date. The start/end date must be equal to or later than the current date.");
-    }
+    } else {
     next (error)
-  } 
+    } 
+  }
 }
 
 export default assignment;

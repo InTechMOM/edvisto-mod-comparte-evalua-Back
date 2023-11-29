@@ -18,7 +18,7 @@ async function studentFeedback(request, response, next) {
     return response.status(400).json({error: error.details[0].message}) 
     }
     
-    isValidObjectId(id, response)
+    isValidObjectId(id);
  
     //feedback
     const feedback = await StudentsFeedback.findByIdAndUpdate(id , {feedback:request.body.feedback, qualified:true} , {new:true});
@@ -32,7 +32,14 @@ async function studentFeedback(request, response, next) {
       data: feedback
     })
   } catch(error) {
-    next(error)
+    if (error.message === 'Id Not Valid'){
+      return response.status(400).json({
+        message:"Id Not Valid"
+      });
+
+    } else {
+    next (error);
+    };
   }
 }
 

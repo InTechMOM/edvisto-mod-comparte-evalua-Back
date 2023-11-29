@@ -5,7 +5,7 @@ import isValidObjectId from "../../utils/valid.js"
 const assignmentDelete = async (request, response, next) => { 
   const id = request.params.id
   try { 
-    isValidObjectId(id, response)
+    isValidObjectId(id)
 
      const assignmentDeleteId = await Assignment.findByIdAndDelete(id);
      if (!assignmentDeleteId) {
@@ -16,9 +16,17 @@ const assignmentDelete = async (request, response, next) => {
         message:"Assignment successfully deleted",
         data: assignmentDeleteId
      });
-  } catch (error) { 
-     next (error);
-   };
- }
+  } catch (error) {
+
+    if (error.message === 'Id Not Valid'){
+      return response.status(400).json({
+        message:"Id Not Valid"
+      });
+
+    } else {
+    next (error);
+    };
+  }
+}
 
 export default assignmentDelete;
