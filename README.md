@@ -26,7 +26,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][LinkedIn-shield]][LinkedIn-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -36,7 +36,7 @@
   </a>
 
   <p align="center">
-    La plataforma educativa "EdVisto" se plantea como una solución tecnologica e innovadora diseñada para revolucionar el proceso de enseñanza y aprendizaje por medio de la implementación de un aprendizaje basado en proyectos de video, con una integración con el método socratico; donde se fomenta el aprendizaje interactivo y critico.
+    La plataforma educativa "EdVisto" se plantea como una solución tecnológica e innovadora diseñada para revolucionar el proceso de enseñanza y aprendizaje por medio de la implementación de un aprendizaje basado en proyectos de video, con una integración con el método socrático; donde se fomenta el aprendizaje interactivo y critico.
     <br />
   </p>
 </div>
@@ -56,7 +56,7 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Guia de inicial</a>
+      <a href="#getting-started">Guía de inicial</a>
       <ul>
         <li><a href="#prerequisites">Prerequisitos</a></li>
         <li><a href="#installation">Instalación</a></li>
@@ -73,68 +73,52 @@
 <!-- ABOUT THE PROJECT -->
 ## Acerca del Proyecto
 
-El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma educativa, EdVisto. Este módulo se enfoca en brindar a los usuarios una experiencia de registro y autenticación fluida, segura y eficiente, utilizando tanto una autenticación que implementa correo electrónico  y constraseña como la popular autenticación de Google. También se encarga  del flujo relacionado a la asignación y feedback de determinado proyecto desde la interfaz del usuario (Docente), garantizando que los datos del usuario se almacenen de manera confiable en nuestra base de datos no relacional de MongoDB.
+El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma educativa, EdVisto. Este módulo se enfoca en brindar a los usuarios una experiencia de registro y autenticación fluida, segura y eficiente, utilizando tanto una autenticación que implementa correo electrónico  y contraseña como la popular autenticación de Google. También se encarga  del flujo relacionado a la asignación y feedback de determinado proyecto desde la interfaz del usuario (Docente), garantizando que los datos del usuario se almacenen de manera confiable en nuestra base de datos no relacional de MongoDB.
 
 <!-- FUNTIONALITIES -->
 ### Funcionalidades
 
 **Registro de Usuarios:**
 
-- ✍️📋 Creación de cuentas de usuarios: ¡Nuestra plataforma permite a los usuarios registrarse fácilmente! A través de un sencillo formulario que contempla (Nombre, apellido, fecha de nacimiento, correo electronico, contraseña  y pregunta de seguridad), donde los usuarios pueden proporcionar su información personal y crear sus cuentas de usuario. 
+- ✍️📋 Creación de cuentas de usuarios: ¡Nuestra plataforma permite a los usuarios registrarse fácilmente! A través de un sencillo formulario que contempla (Nombre, apellido, fecha de nacimiento, correo electrónico, contraseña  y pregunta de seguridad), donde los usuarios pueden proporcionar su información personal y crear sus cuentas de usuario. 
 - 🌐🔑 Autenticación con Google: Se desarrollo la opción de autenticación utilizando cuentas de Google. Con solo un clic, los usuarios pueden tanto registrarse como ingresar rápidamente y sin complicaciones. 
-- 📧🔒 Verificación de la cuenta a través del correo electronico: Para garantizar la seguridad y la autenticidad de las cuentas de nuestros usuarios, enviamos un correo electrónico de verificación a cada usuario registrado. Con solo un clic en el enlace, ¡la cuenta queda verificada! 
-
-![Product Name Screen Shot][product-screenshot1]
+- 📧🔒 Verificación de la cuenta a través del correo electrónico: Para garantizar la seguridad y la autenticidad de las cuentas de nuestros usuarios, enviamos un correo electrónico de verificación a cada usuario registrado. Con solo un clic en el enlace, ¡la cuenta queda verificada! 
 
 **Ingreso de Usuarios:**
 
 - 🚪🔑 Inicio de sesión tradicional: Se desarrollo un método tradicional de inicio de sesión, donde los usuarios pueden ingresar su correo electrónico y contraseña para acceder a los servicios de la plataforma. 
 - 🔒🛡️ Protección contra intentos fallidos:  Considerando la  seguridad de nuestros usuarios, se implemento una funcionalidad que bloquea el inicio de sesión después de tres intentos fallidos. Garantizando que las cuentas estén protegidas contra accesos no autorizados. 
 
-![Product Name Screen Shot][product-screenshot2]
-
-- 📧🔑 Reestablecimiento de contraseña:  ¿Olvidaste tu contraseña? No te preocupes. Se habilito la opción de restablecimiento de contraseña, donde el usuario recibira un correo electrónico con un enlace para restablecer su contraseña de forma segura por medio del ingreso de la pregunta de seguridad que suministro en la creación de la cuenta, o como respuesta a un bloqueo automatico con anterioridad.
+- 📧🔑 Restablecimiento de contraseña:  ¿Olvidaste tu contraseña? No te preocupes. Se habilito la opción de restablecimiento de contraseña, donde el usuario recibirá un correo electrónico con un enlace para restablecer su contraseña de forma segura por medio del ingreso de la pregunta de seguridad que suministro en la creación de la cuenta, o como respuesta a un bloqueo automático con anterioridad.
 
 **Asignaciones de proyectos:**
 
-- 📅✨ Asignación: Se implemento una funcionalidad que contempla una lectura y un procesamiento de datos como; curso, email del docente, nombre del proyecto, título del fenomeno, descripción, fechas de inicio y finalización, y recursos sugeridos por medio de URL (que pueden ser desde un link de Drive hasta un video de youtube). Para de forma seguida garantizar que ambas fechas suministradas se encuentren no antes del presente día de asignación, y finalmente se realiza el almacenamiento del proyecto.
+- 📅✨ Asignación: Se implemento una funcionalidad que contempla una lectura y un procesamiento de datos como; curso, email del docente, nombre del proyecto, título del fenómeno, descripción, fechas de inicio y finalización, y recursos sugeridos por medio de URL (que pueden ser desde un link de Drive hasta un video de YouTube). Para de forma seguida garantizar que ambas fechas suministradas se encuentren no antes del presente día de asignación, y finalmente se realiza el almacenamiento del proyecto.
 
-<div align="center">
-
- <a href="https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/">
-    <img src="images/proyectos.png" alt="asignacion">
-  </a>
-
-</div>
-
-- 🔄🔍 Recuperación de proyectos: Se considera la funcionalidad para por medio de diversos parámetros suministrados como el; curso y email del docente, se pueda filtrar la creación de proyectos dentro de la base de datos.
+- 🔄🔍 Recuperación de proyectos: También se considera la funcionalidad para filtrar la creación de proyectos dentro de la base de datos por medio de diversos parámetros suministrados, como el curso y el correo electrónico del docente.
 
 **Carga de video:**
 
-- 📤📅 Entregable: la funcionalidad de "delivery", permite a los estudiantes dar respuesta a los proyectos asignados previamente por determinado docente por medio de una url, considerando de forma analoga la previsualización de estos entregables en la interfaz del docente.
+- 📤📅 Entregable: la funcionalidad de "delivery", permite a los estudiantes dar respuesta a los proyectos asignados previamente por determinado docente por medio de una URL, considerando de forma análoga la previsualización de estos entregables en la interfaz del docente.
   
 **Feedback del video desarrollado:**
 
-- 😊📊 Feedback: Se implemento una funcionalidad encargada de gestionar el feedback desarrollado por el docente posterior al video entregado por cada estudiante, y la adecuada retroalimentación del desarrollo del trabajo del estudiante de forma númerica  en 4 habilidades del Siglo XXI (colaboración, creatividad, comunicación y el pensamiento crítico) y de forma escrita por medio de un comentario.
+- 😊📊 Feedback: Se implemento una funcionalidad encargada de gestionar el feedback desarrollado por el docente posterior al video entregado por cada estudiante, y la adecuada retroalimentación del desarrollo del trabajo del estudiante de forma numérica en 4 habilidades del Siglo XXI (colaboración, creatividad, comunicación y el pensamiento crítico) y de forma escrita por medio de un comentario.
 
-![Product Name Screen Shot][product-screenshot5]
-
-También se introdujó una interfaz que perme tener una visualización de la cantidad de entregables faltantes por calificación, de forma desagregada en función de los "cursos" o del estado de claificación.
-
-![Product Name Screen Shot][product-screenshot6]
+También se introdujo una interfaz que permite tener una visualización de la cantidad de entregables faltantes por calificación, de forma desagregada en función de los "cursos" o del estado de clasificación.
 
 <!-- DATABASE -->
 
 ### Base de datos y almacenamiento de datos
 
-- Uso de Firebase Authentication: En cuanto a la autenticación, se implemento el servicio de Firebase (Autentication), que proporciona una experiencia segura y confiable para nuestros usuarios, permitiendo tener funciones como; la verificación del email, encriptamiento de la constraseña, reestablecimiento de la constraseña y conexión con proveedores externos de forma eficiente y relativamente al alcance.
-- Conexión con mongoDB como base de datos: Utilizamos MongoDB como nuestra base de datos no relacional para almacenar y gestionar la información del usuario. Brindando la flexibilidad y escalabilidad que queriamos obtener. 📊
+- Uso de Firebase Authentication: En cuanto a la autenticación, se implemento el servicio de Firebase ( Autenticación), que proporciona una experiencia segura y confiable para nuestros usuarios, permitiendo tener funciones como; la verificación del email, encriptamiento de la contraseña, restablecimiento de la contraseña y conexión con proveedores externos de forma eficiente y relativamente al alcance.
+- Conexión con mongoDB como base de datos: Utilizamos MongoDB como nuestra base de datos no relacional para almacenar y gestionar la información de los usuarios. Brindando la flexibilidad y escalabilidad que queríamos obtener. 📊
 
 <!-- VALIDATION -->
 
 ### Validación de Datos
 
-Nuestro modúlo implementó la validación de datos por medio de Joi, lo que garantiza que la información proporcionada por los usuarios sea correcta y cumpla con nuestros estándares, para el debido almacenamiento en la base de datos. ✅
+Nuestro módulo implementó la validación de datos por medio de Joi, lo que garantiza que la información proporcionada por los usuarios sea correcta y cumpla con nuestros estándares, para el debido almacenamiento en la base de datos. ✅
 
   ```sh
   npm install joi
@@ -144,7 +128,7 @@ Nuestro modúlo implementó la validación de datos por medio de Joi, lo que gar
 
 ### Documentación
 
-La documentación completa está disponible a través de Swagger, sin embargo hemos documentado cada funcionalidad en carpetas separadas, para permitir su exploración detallada por medio de los siguientes enlaces.
+La documentación completa está disponible a través de Swagger. Sin embargo, también hemos documentado cada funcionalidad en carpetas separadas para permitir su exploración detallada, por medio de los siguientes enlaces.
 
 -[Registro y Autenticación tradicional y con proveedor Google](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/users/documentation/documentation.js). 📚
 
@@ -152,7 +136,7 @@ La documentación completa está disponible a través de Swagger, sin embargo he
 
 -[Entregable de proyectos y Feedback](https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/src/api/feedback/documentation/documentation.js). 📚
 
-Y de forma analoga se puede acceder a las rutas de las API o explorar la documentación representada en tu navegador por medio del siguiente enlace [Documentación_Swaggger](http://localhost:3000/docs/#/), al ejecutar el codigo de forma local.
+Y de forma análoga se puede acceder a las rutas de las API o explorar la documentación representada en tu navegador por medio del siguiente enlace [Documentación_Swagger](http://localhost:3000/docs/#/), al ejecutar el código de forma local.
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
@@ -169,7 +153,7 @@ Y de forma analoga se puede acceder a las rutas de las API o explorar la documen
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
 <!-- GETTING STARTED -->
-## Guia de inicial
+## Guía de inicial
 
 Para poner en funcionamiento una copia local, sigue estos sencillos pasos.
 
@@ -186,7 +170,7 @@ Asegúrate de tener instalados los siguientes elementos antes de comenzar
 
 También necesitarás las credenciales de la API de Firebase, que puedes obtener siguiendo su respectiva  [Documentación_Firebase] (https://firebase.google.com/docs/auth?hl=es-419).
 
-### Instalacion
+### Instalación
 
 1. Clonar el repositorio
    ```sh
@@ -214,7 +198,7 @@ B. Usando Node.js directamente
    ```sh
    node app.js
    ```
-C. Usando "npm" con "nodemon" para reiniciar automaticamente en cambios (Entorno de desarrollor)
+C. Usando "npm" con "nodemon" para reiniciar automáticamente en cambios (Entorno de desarrollo)
    ```sh
    npm run dev
    ```
@@ -229,11 +213,11 @@ Nota: Asegúrate de que tu proyecto de Firebase esté configurado correctamente 
 ## Mapa de Ruta
 
 - [☑️] Funcionalidad de registro de usuarios
-- [☑️] Funcionalidad de inicio de sesion
+- [☑️] Funcionalidad de inicio de sesión
     - [☑️] Tradicional
     - [☑️] Con proveedor Google
     - [☑️] Bloqueo
-    - [☑️] Reestablecimiento
+    - [☑️] Restablecimiento
 - [☑️] Funcionalidad de asignación de proyectos
 - [☑️] Funcionalidad de entregable del proyecto
 - [☑️] Funcionalidad de feedback del proyecto
@@ -266,7 +250,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contactos
 
-**Autor (Angie Carolina Reyes)**
+**Autora (Angie Carolina Reyes)**
 
 - [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5?logo=linkedin&color=0077B5)](https://www.linkedin.com/in/carolinarbackendingenieriamecanica/)
 - [![Correo electrónico](https://img.shields.io/badge/Correo%20electrónico-%230077B5?logo=gmail&color=0077B5)](mailto:angiedylexx@gmail.com)
@@ -295,9 +279,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-url]: https://github.com/github_username/repo_name/issues
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/Angiedylexx/edvisto-mod-comparte-evalua-Back/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/carolinarbackendingenieriamecanica/
-[product-screenshot1]: images/registro.png
-[product-screenshot2]: images/ingreso.png
-[product-screenshot5]: images/feedback1.png
-[product-screenshot6]: images/feedback2.png
+[LinkedIn-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[LinkedIn-url]: https://www.linkedin.com/in/carolinarbackendingenieriamecanica/
