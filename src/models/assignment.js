@@ -1,9 +1,7 @@
 import { Schema, model, SchemaTypes } from "mongoose";
 
-const assignmentSchema = new Schema(
-{
-  //Email de docente
-  emailTeacher: {
+const assignmentSchema = new Schema({
+emailTeacher: {
     type:String,
     required:true,
     minlength: 8,

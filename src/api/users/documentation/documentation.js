@@ -50,7 +50,7 @@
  *      securityResponse: zoe
  *      rol: Soy Docente
  *      acceptedTerms: True
- *      course: QUINTOA
+ *      course: SegundoA
  */
 
 //API POST

@@ -1,4 +1,4 @@
-//Función de validación de datos de ingreso
+//Validación de datos de ingreso
 
 function validData(schema, response, request) {
   const {error} = schema.validate(request.body);

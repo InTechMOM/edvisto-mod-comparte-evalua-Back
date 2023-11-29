@@ -38,9 +38,10 @@ const login = async (request, response, next) => {
       //Captación de llamada de error por contraseña erronéa de firebase
       if (error.code === "auth/wrong-password") {
 
+        const attemptsAllowed = 3;
         
         user.attemptsFailed += 1;
-        if (user.attemptsFailed === 3){
+        if (user.attemptsFailed === attemptsAllowed){
 
           user.blocked = true;
 

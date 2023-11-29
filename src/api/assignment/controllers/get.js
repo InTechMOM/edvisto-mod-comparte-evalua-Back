@@ -1,7 +1,7 @@
 import mongoose from "mongoose"; 
 import Assignment from "../../../models/assignment.js";
 
-//Listar
+//Listar proyectos asignados
 const allProjects = async (request, response, next) => { 
   const { course, emailTeacher, name, title} = request.query;
 
@@ -16,7 +16,7 @@ const allProjects = async (request, response, next) => {
 
     const arrayProjects = await Assignment.find(filters); 
 
-    if (arrayProjects.length === 0) {
+    if (!arrayProjects?.length === 0) {
       return response.status(404).json({ 
         message:"Projects Not Found"});
     }

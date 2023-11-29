@@ -95,8 +95,6 @@ El módulo "Registro, Ingreso, Compartir y Evaluar" es parte de la plataforma ed
 
 - 📧🔑 Reestablecimiento de contraseña:  ¿Olvidaste tu contraseña? No te preocupes. Se habilito la opción de restablecimiento de contraseña, donde el usuario recibira un correo electrónico con un enlace para restablecer su contraseña de forma segura por medio del ingreso de la pregunta de seguridad que suministro en la creación de la cuenta, o como respuesta a un bloqueo automatico con anterioridad.
 
-![Product Name Screen Shot][product-screenshot3]
-
 **Asignaciones de proyectos:**
 
 - 📅✨ Asignación: Se implemento una funcionalidad que contempla una lectura y un procesamiento de datos como; curso, email del docente, nombre del proyecto, título del fenomeno, descripción, fechas de inicio y finalización, y recursos sugeridos por medio de URL (que pueden ser desde un link de Drive hasta un video de youtube). Para de forma seguida garantizar que ambas fechas suministradas se encuentren no antes del presente día de asignación, y finalmente se realiza el almacenamiento del proyecto.
@@ -301,6 +299,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [linkedin-url]: https://www.linkedin.com/in/carolinarbackendingenieriamecanica/
 [product-screenshot1]: images/registro.png
 [product-screenshot2]: images/ingreso.png
-[product-screenshot3]: images/reestablecimiento.png
 [product-screenshot5]: images/feedback1.png
 [product-screenshot6]: images/feedback2.png

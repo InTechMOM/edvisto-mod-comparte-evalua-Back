@@ -11,11 +11,11 @@ const assignmentDelete = async (request, response, next) => {
      if (!assignmentDeleteId) {
       return response.status(404).json({
         message:"Assignment Not Found"})
-      }
-      return response.status(200).json({
+      };
+    return response.status(200).json({
         message:"Assignment successfully deleted",
         data: assignmentDeleteId
-     })
+     });
   } catch (error) { 
      next (error);
    };

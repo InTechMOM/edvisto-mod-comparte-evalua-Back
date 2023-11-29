@@ -8,7 +8,8 @@ import partsDate from "../../utils/date.js"
 function dateValidation (date) {
   const currentDate = new Date();
 
-  const dateInfo = partsDate(date);
+  try{
+    const dateInfo = partsDate(date);
     const {day, month, year} = dateInfo;
     const inputDate = new Date(year, month - 1, day); //enero = 0
 
@@ -17,6 +18,9 @@ function dateValidation (date) {
     } else {
       throw new Error("Invalid date");
     }
+  } catch (error) {
+    throw new Error("Wrong date format");
+  }
 }
 
 async function assignment(request, response, next) {
@@ -24,7 +28,6 @@ async function assignment(request, response, next) {
 
     validData(SchemaAssignment, response, request);
 
-    //Lectura de datos
     const { course, emailTeacher, name, title, descriptión, emailStudents, resourcesURL, startDate, finishDate} = request.body;
 
     //Verificación que sea un email de docente
@@ -55,12 +58,12 @@ async function assignment(request, response, next) {
 
     //Almacenamiento de la asignación
     const saveAssignment = await newAssignment.save()
-    response.status(201).json({
+    return response.status(201).json({
       message:"Assigned Project",
       data: saveAssignment
     })   
   } catch (error) {
-    if (error.message === "Invalid date") {
+    if (error.message === "Invalid date" || error.message === "Wrong date format") {
       return response.status(400).json("Invalid date. The start/end date must be equal to or later than the current date.");
     }
     next (error)

@@ -9,7 +9,7 @@ const getCount = async (request, response, next) => {
 
     isValidObjectId(id, response)
  
-    //Cantidad de projectos entregados calificados por asignación
+    //Cantidad de projectos entregados / calificados por asignación
     const qualifiedCount = await StudentsFeedback.countDocuments({
       assignmentId : id,
       qualified:true

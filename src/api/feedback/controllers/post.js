@@ -7,6 +7,9 @@ import isValidObjectId from "../../utils/valid.js"
 import validData from "../../utils/validData.js"
 
 async function delivery (request, response, next) {
+
+  const mongoDBEmailDuplicate = 11000;
+
   try {
     const { emailStudent, videoURL } = request.body;
     const assignmentId = request.params.id
@@ -55,7 +58,7 @@ async function delivery (request, response, next) {
     })
 
   } catch (error) { 
-    if  (error.code === 11000) {
+    if  (error.code === mongoDBEmailDuplicate) {
       return response.status(409).json({error:"URL is assigned to another user"});
     } next (error)
   }

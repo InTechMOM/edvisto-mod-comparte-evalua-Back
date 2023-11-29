@@ -50,7 +50,7 @@ export async function registerGoogle(request, response, next) {
   }
 }
 
-//Cierre de sesión (manual) si se usa toda modificar los errores del fetch
+//Cierre de sesión (manual) si se usa modificar los errores del fetch
 export async function signOutUser() {
   try {
     await signOut(auth);

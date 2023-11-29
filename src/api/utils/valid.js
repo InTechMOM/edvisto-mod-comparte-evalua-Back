@@ -1,6 +1,5 @@
+//Validación de id
 import mongoose from "mongoose"; 
-
-//Función de validación de id
 
 function isValidObjectId(id, response) {
   if (!mongoose.isValidObjectId(id)) {

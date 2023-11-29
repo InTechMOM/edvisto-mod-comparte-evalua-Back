@@ -11,7 +11,6 @@ const userDelete = async (request, response, next) => {
     
     isValidObjectId(id, response);
 
-    //Busqueda del usario y eliminación
     const usertoDelete = await UserEV.findById(id);
     if (!usertoDelete) {
       return response.status(404).json({
@@ -19,8 +18,10 @@ const userDelete = async (request, response, next) => {
     } 
 
     const {uid} = usertoDelete;
+    console.log(usertoDelete);
 
     const deletedUser = await UserEV.findByIdAndDelete(id)
+    console.log(deletedUser);
    
     await adminFB.auth().deleteUser(uid);
       return response.status(200).json({

@@ -1,11 +1,12 @@
 function partsDate (date) {
   const dateParts = date.split("-");
+  const datePartsCount = 3;
 
-  if (dateParts.length === 3) {
+  if (dateParts.length === datePartsCount) {
     const [day, month, year] = dateParts;
     return {day, month, year};
   } else {
-    return response.status(422).json({error:"wrong date format"});
+    throw new Error("Wrong date format");
   }
 }
 
