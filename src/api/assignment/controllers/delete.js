@@ -12,14 +12,14 @@ const assignmentDelete = async (request, response, next) => {
       return response.status(404).json({
         message:"Assignment Not Found"})
       };
-    return response.status(200).json({
+    return response.status(201).json({
         message:"Assignment successfully deleted",
         data: assignmentDeleteId
      });
   } catch (error) {
 
     if (error.message === 'Id Not Valid'){
-      return response.status(400).json({
+      return response.status(422).json({
         message:"Id Not Valid"
       });
 

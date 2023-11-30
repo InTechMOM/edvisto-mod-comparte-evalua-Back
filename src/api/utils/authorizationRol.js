@@ -1,26 +1,18 @@
-function authorizationRol(rolWhich, response, dataCreated = undefined) {
-  if (rolWhich) {
-    if (rolWhich.rol === "Soy Docente") {
-      if (dataCreated !== undefined) {
-        return response.status(200).json({
-          saved:("Welcome teacher"),
-        data: dataCreated
-        });
-      } else {
-        return response.status(200).json("Welcome teacher");
-      }  
-    } else {
-      if (dataCreated !== undefined) {
-        return response.status(200).json({
-          saved:("Welcome student"),
-          data: dataCreated
+function authorizationRol(observerUser, response, idToken, refreshToken) {
+  if (observerUser) {
+    if (observerUser.rol === "Soy Docente") {
+      return response.status(200).json({
+        message:"Welcome teacher",
+        idToken, 
+        refreshToken
       });
-      } else {
-        return response.status(200).json("Welcome student");
-      }
+    } else {
+      return response.status(200).json({
+        message:"Welcome student",
+        idToken, 
+        refreshToken});
     }
   }
 }
 
-export default authorizationRol
-  
+export default authorizationRol  

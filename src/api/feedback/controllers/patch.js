@@ -7,6 +7,8 @@ async function studentFeedback(request, response, next) {
   try {
     const id = request.params.id //Id de entregable
 
+    isValidObjectId(id);
+
     //Validación de datos
     const { error, value } = schemaFeedback.validate(request.body);
 
@@ -17,10 +19,7 @@ async function studentFeedback(request, response, next) {
     if (error) { 
     return response.status(400).json({error: error.details[0].message}) 
     }
-    
-    isValidObjectId(id);
- 
-    //feedback
+  
     const feedback = await StudentsFeedback.findByIdAndUpdate(id , {feedback:request.body.feedback, qualified:true} , {new:true});
     if (!feedback) {
       return response.status(404).json({
@@ -33,7 +32,7 @@ async function studentFeedback(request, response, next) {
     })
   } catch(error) {
     if (error.message === 'Id Not Valid'){
-      return response.status(400).json({
+      return response.status(422).json({
         message:"Id Not Valid"
       });
 

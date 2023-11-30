@@ -11,7 +11,7 @@ const deliveryDelete = async (request, response, next) => {
      const deliveryDeleteId = await StudentsFeedback.findByIdAndDelete(id);
      if (!deliveryDeleteId) {
       return response.status(404).json({
-        message:"delivery Not Found"})
+        message:"Delivery Not Found"})
       }
       return response.status(200).json({
         message:"Delivery successfully deleted",

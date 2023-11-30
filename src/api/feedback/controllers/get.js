@@ -18,7 +18,7 @@ const allDeliveries = async (request, response, next) => {
 
     const arrayDeliveries = await StudentsFeedback.find(filters); 
 
-    if (!arrayDeliveries?.length === 0) {
+    if (arrayDeliveries?.length === 0) {
       return response.status(404).json({ 
         message:"Deliveries Not Found"});
     }

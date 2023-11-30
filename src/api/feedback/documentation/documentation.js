@@ -24,9 +24,6 @@
 *              feedback:
 *                type: object
 *                properties:
-*                  email:
-*                    type: string
-*                    description: "Email of teacher."
 *                  skills:
 *                    type: object
 *                    properties:
@@ -83,7 +80,7 @@
  *    201:
  *     description: Project delivered
  *    404:
- *     description: Assignment not Found or Unregistered student email
+ *     description: Assignment not Found or project not assigned to student
  *    422:
  *     description: Id Not Valid
  *    500:
@@ -107,11 +104,6 @@
  *    - in: query
  *      name: emailStudent
  *      description: Query for emailStudent
- *      schema:
- *        type: string
- *    - in: query
- *      name: email
- *      description: Query for email
  *      schema:
  *        type: string
  *    - in: query
@@ -201,7 +193,6 @@
  *       $ref: '#/components/schemas/FeedbackSchema'
  *      example:
  *       feedback:
- *         email: some2@example.com
  *         skills:
  *           communication: 4
  *           collaboration: 5
@@ -214,7 +205,7 @@
  *    400:
  *     description: Qualification must not be empty
  *    404:
- *     description: Delivery Not Found or Unregistered student email
+ *     description: Delivery Not Found 
  *    422:
  *     description: Id Not Valid
  *    500:
