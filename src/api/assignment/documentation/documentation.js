@@ -27,14 +27,12 @@
  *        type: date
  *     required:
  *      - emailTeacher
- *      - course
  *      - name
  *      - title
  *      - descriptión
  *      - emailStudents
  *     example:
  *      emailTeacher: some@example.com 
- *      course: SegundoA
  *      name: Inteligencia Artificial
  *      title: Análisis de datos utilizando inteligencia artificial
  *      descriptión: Desarrollar un modelo de aprendizaje automático que pueda predecir la probabilidad de que un cliente abandone un servicio

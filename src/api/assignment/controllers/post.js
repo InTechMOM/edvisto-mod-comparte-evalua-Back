@@ -42,6 +42,10 @@ async function assignment(request, response, next) {
       })
     }
 
+    if ((startDate && !finishDate) || (!startDate && !finishDate )) {
+      return response.status(422).json("Both start and finish dates are required or none at all.")
+    }
+
     const newAssignmentData = {
       emailTeacher, 
       course,
@@ -52,11 +56,11 @@ async function assignment(request, response, next) {
       resourcesURL,
     }
 
-    if ( isoStart && isoFinish) {
+    if ( startDate && finishDate) {
       isoStart = dateValidation(startDate)
       isoFinish = dateValidation(finishDate)
-      newAssignmentData.isoStart = new Date(isoStart),
-      newAssignmentData.isoFinish = new Date(isoFinish)
+      newAssignmentData.startDate = isoStart,
+      newAssignmentData.finishDate = isoFinish
     }
 
     const newAssignment = new Assignment(newAssignmentData);
