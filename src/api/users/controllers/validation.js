@@ -29,3 +29,8 @@ export const schemaLogin = Joi.object ({
   email: Joi.string().min(8).max(32).email({minDomainSegments:2, tlds:{allow:["com","net"]}}).required(),
   password: Joi.string().min(6).max(20).pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).*$/).required()
 })
+
+export const schemaUpdate = Joi.object ({
+  email: Joi.string().min(8).max(32).email({minDomainSegments:2, tlds:{allow:["com","net"]}}).required(),
+  securityResponse: Joi.string().min(3).max(15).strict().trim().required(),
+})

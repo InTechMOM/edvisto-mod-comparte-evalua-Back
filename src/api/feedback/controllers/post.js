@@ -26,7 +26,7 @@ async function delivery (request, response, next) {
       _id:assignmentId,
       emailStudents: {$in: [emailStudent]},
     })
-      .select("course title")
+      .select("course title startDate finishDate")
       .exec();
     
     if (!isAssigned) {
@@ -41,6 +41,20 @@ async function delivery (request, response, next) {
       return response.status(404).json({
         error:"Unregistered student email"
       })
+    }
+        
+    const currentDate = new Date(); 
+     
+    if (!('finishDate' in isAssigned && 'startDate' in isAssigned)) {     
+      if (isAssigned.startDate !== undefined && isAssigned.finishDate !== undefined) {
+        const startDate = new Date(isAssigned.startDate);
+        const finishDate = new Date(isAssigned.finishDate);
+        if (startDate > currentDate || currentDate > finishDate ) {
+          return response.status(403).json({
+          message:("Delivery out of dates")
+        })
+      }
+      } 
     }
 
     //Creación de entrega

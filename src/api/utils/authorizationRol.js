@@ -3,6 +3,8 @@ function authorizationRol(observerUser, response, idToken, refreshToken) {
       return response.status(200).json({
         message:"Welcome teacher",
         name:observerUser.name,
+        lastName:observerUser.lastName,
+        id:observerUser._id,
         idToken, 
         refreshToken
       });
@@ -10,6 +12,8 @@ function authorizationRol(observerUser, response, idToken, refreshToken) {
       return response.status(200).json({
         message:"Welcome student",
         name:observerUser.name,
+        lastName:observerUser.lastName,
+        id:observerUser._id,
         idToken, 
         refreshToken});
     }
