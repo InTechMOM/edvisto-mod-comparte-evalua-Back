@@ -1,27 +1,27 @@
 import { Schema, model, SchemaTypes } from "mongoose";
 
-let valuesRoles=["Soy Estudiante", "Soy Docente"];
-let valuesSecurityQuestions=[
-  "Nombre de tu mascota",
-  "Animal favorito", 
-  "Nombre de tu abuelo"
-]
+const valuesCourse = ["SegundoA", "SegundoB", "TerceroA", "TerceroB", "CuartoA", "CuartoB", "QuintoA", "QuintoB"];
+const valuesCountry=[
+  "Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador", "Paraguay", "Perú", "Uruguay", "Costa Rica",
+  "Cuba", "El Salvador", "Guatemala", "Honduras", "México", "Nicaragua", "Panamá" ]
+const valuesRoles = ["Soy Estudiante", "Soy Docente"];
+const valuesSecurityQuestions = ["Nombre de tu mascota", "Animal favorito", "Nombre de tu abuelo"]
 
 const userSchema = new Schema({
   name: {
     type:String,
     minlength:[3,"La cadena es más corta de la requerida"],
-    maxlength:30
+    maxlength:50,
   },
   lastName: {
     type:String,
     minlength:[3,"La cadena es más corta de la requerida"],
-    maxlength:15
+    maxlength:50
   },
   birthdayDate: {
-    type:SchemaTypes.Date, // Almacena la fecha en formato YYYY-MM-DD
-    get: date => date.toISOString().split('T')[0], // Esto obtiene la fecha en formato YYYY-MM-DD
-    set: date => new Date(date) // Esto asegura que siempre se almacene como una fecha
+    type:SchemaTypes.Date, 
+    get: date => date.toISOString().split('T')[0], 
+    set: date => new Date(date) 
   },
   email: {
     type:String,
@@ -42,7 +42,7 @@ const userSchema = new Schema({
     minOfNumeric:1, 
     noWhiteSpaces:0, 
     minOfSpecialCharacters:1, 
-    match: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).*$/, //validaciones para evitar inserción a la bd, no para usuario
+    match: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).*$/, 
   },
   password2: {
     type:String,
@@ -53,7 +53,7 @@ const userSchema = new Schema({
     minOfNumeric:1, 
     noWhiteSpaces:0, 
     minOfSpecialCharacters:1, 
-    match: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).*$/, //validaciones para evitar inserción a la bd, no para usuario
+    match: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).*$/, 
   },
   securityQuestion:{
     type:String,
@@ -70,6 +70,16 @@ const userSchema = new Schema({
     enum:{
     values: valuesRoles,message:"Opción no valida"}
   },
+  country: {
+    type:String,
+    enum:{
+      values: valuesCountry,message:"Opción no valida"}
+  },
+  course: {
+    type:String,
+    enum:{
+      values: valuesCourse,message:"Opción no valida"}
+  },
   acceptedTerms: {
     type: Boolean
   },
@@ -83,10 +93,10 @@ const userSchema = new Schema({
   },
   uid: {
     type: String
-  },
-  course: {
-    type:String
   }
-})
+},
+{
+  timestamps: true
+});
 
 export default model("UserEV", userSchema);

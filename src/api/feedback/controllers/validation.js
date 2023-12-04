@@ -9,7 +9,6 @@ export const schemaDelivery =   Joi.object ({
 // Esquema de feedback
 export const schemaFeedback = Joi.object ({
   feedback: ({
-    email: Joi.string().min(8).max(32).email({minDomainSegments:2, tlds:{allow:["com","net"]}}).required(),
     skills: {
       communication: Joi.number().required().min(0).max(5),
       collaboration: Joi.number().required().min(0).max(5),

@@ -1,7 +1,7 @@
 import mongoose from "mongoose"; 
 import StudentsFeedback from "../../../models/feedback.js";
 
-//Listar proyectos creados por docente
+//Listar proyectos entregados
 const allDeliveries = async (request, response, next) => { 
   const { assignmentId, emailStudent, email, course, title, qualified} = request.query;
 
@@ -18,7 +18,7 @@ const allDeliveries = async (request, response, next) => {
 
     const arrayDeliveries = await StudentsFeedback.find(filters); 
 
-    if (arrayDeliveries.length === 0) {
+    if (arrayDeliveries?.length === 0) {
       return response.status(404).json({ 
         message:"Deliveries Not Found"});
     }

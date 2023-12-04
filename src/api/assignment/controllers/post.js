@@ -2,32 +2,38 @@ import mongoose from "mongoose";
 import Assignment from "../../../models/assignment.js";
 import { SchemaAssignment } from "./validation.js";
 import UserEV from "../../../models/user.js";
-import validData from "../../utils/validData.js"
 import partsDate from "../../utils/date.js"
 
 function dateValidation (date) {
   const currentDate = new Date();
 
-  const dateInfo = partsDate(date);
+  try{
+    const dateInfo = partsDate(date);
     const {day, month, year} = dateInfo;
-    const inputDate = new Date(year, month - 1, day); //enero = 0
+    const inputDate = new Date(year, month - 1, day);
 
     if (inputDate >= currentDate) {
       return `${year}-${month}-${day}T00:00:00.000Z`;
     } else {
       throw new Error("Invalid date");
     }
+  } catch (error) {
+    throw new Error("Wrong date format");
+  }
 }
 
 async function assignment(request, response, next) {
   try {
+    let isoStart;
+    let isoFinish;
 
-    validData(SchemaAssignment, response, request);
+    const {error} = SchemaAssignment.validate(request.body);
+    if (error) { 
+      return response.status(422).json({error: error.details[0].message}) 
+    }
 
-    //Lectura de datos
     const { course, emailTeacher, name, title, descriptión, emailStudents, resourcesURL, startDate, finishDate} = request.body;
 
-    //Verificación que sea un email de docente
     const teacher = await UserEV.findOne({ email:emailTeacher, rol:"Soy Docente" });
     
     if (!teacher) {
@@ -36,12 +42,11 @@ async function assignment(request, response, next) {
       })
     }
 
-    //Validación de fecha posterior a la actual
-    const isoStart = dateValidation(startDate)
-    const isoFinish = dateValidation(finishDate)
+    if ((startDate && !finishDate) || (!startDate && !finishDate )) {
+      return response.status(422).json("Both start and finish dates are required or none at all.")
+    }
 
-    //Creación de la asignación
-    const newAssignment = new Assignment ({
+    const newAssignmentData = {
       emailTeacher, 
       course,
       name : name.toUpperCase(),
@@ -49,22 +54,29 @@ async function assignment(request, response, next) {
       descriptión, 
       emailStudents,
       resourcesURL,
-      startDate: new Date(isoStart),
-      finishDate: new Date(isoFinish)
-    })
+    }
 
-    //Almacenamiento de la asignación
+    if ( startDate && finishDate) {
+      isoStart = dateValidation(startDate)
+      isoFinish = dateValidation(finishDate)
+      newAssignmentData.startDate = isoStart,
+      newAssignmentData.finishDate = isoFinish
+    }
+
+    const newAssignment = new Assignment(newAssignmentData);
+
     const saveAssignment = await newAssignment.save()
-    response.status(201).json({
+    return response.status(201).json({
       message:"Assigned Project",
       data: saveAssignment
     })   
   } catch (error) {
-    if (error.message === "Invalid date") {
-      return response.status(400).json("Invalid date. The start/end date must be equal to or later than the current date.");
-    }
+    if (error.message === "Invalid date" || error.message === "Wrong date format") {
+      return response.status(422).json("Invalid date. The start/end date must be equal to or later than the current date.");
+    } else {
     next (error)
-  } 
+    } 
+  }
 }
 
 export default assignment;

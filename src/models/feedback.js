@@ -27,14 +27,6 @@ const studentsfeedbackSchema = new Schema({
     type:String
   },
   feedback: {
-    email:{
-      type:String,
-      minlength: 8,
-      maxlength: 32,
-      minDomainSegments: 2, 
-      tlds: { allow: ['com', 'net'] },
-      noWhiteSpaces:0
-    },
     skills: {
       communication: {
         type:Number,

@@ -27,18 +27,18 @@
  *        type: date
  *     required:
  *      - emailTeacher
- *      - course
  *      - name
  *      - title
  *      - descriptión
  *      - emailStudents
+ *      - course
  *     example:
  *      emailTeacher: some@example.com 
- *      course: QuintoA
  *      name: Inteligencia Artificial
  *      title: Análisis de datos utilizando inteligencia artificial
  *      descriptión: Desarrollar un modelo de aprendizaje automático que pueda predecir la probabilidad de que un cliente abandone un servicio
  *      emailStudents: [some1@example.com]
+ *      course: SegundoA
  *      resourcesURL: [https://www.youtube.com/watch?v=OhEhe2YlzoE]
  *      startDate: "17-11-2023"
  *      finishDate: "27-11-2023"

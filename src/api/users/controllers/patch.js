@@ -1,6 +1,7 @@
 import auth from "../../../config/firebase.js";
 import { sendPasswordResetEmail } from "firebase/auth";
 import UserEV from "../../../models/user.js";
+import { schemaUpdate } from "./validation.js";
 
 //Resetear contraseña
 const resetPassword = async (request, response, next)  => {
@@ -9,6 +10,11 @@ try {
   
   //Lectura de datos
   const { email, securityResponse } = request.body;
+
+  const {error} = schemaUpdate.validate(request.body);
+    if (error) { 
+      return response.status(400).json({error: error.details[0].message});
+    }
 
   const user = await UserEV.findOne({email});
 
@@ -19,7 +25,6 @@ try {
   if(user.securityResponse !== securityResponse) {
     return response.status(403).json({ error:"Incorrect security response"})}
 
-  //Envio de correo de reestablecimiento (comentado para pruebas, evitando spam)
   //await sendPasswordResetEmail(auth, email);
 
   return response.status(200).json({ error:"A password reset email has been sent"})

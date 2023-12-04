@@ -50,7 +50,6 @@
  *      securityResponse: zoe
  *      rol: Soy Docente
  *      acceptedTerms: True
- *      course: QUINTOA
  */
 
 //API POST
@@ -211,6 +210,8 @@
  *   responses:
  *    200:
  *     description: Message sent succesfully
+ *    400:
+ *     description: Bad Request
  *    403:
  *     description: Unregistered Email or Incorrect security response
  */

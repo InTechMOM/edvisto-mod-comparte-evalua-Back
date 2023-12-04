@@ -1,9 +1,9 @@
 import { Schema, model, SchemaTypes } from "mongoose";
 
-const assignmentSchema = new Schema(
-{
-  //Email de docente
-  emailTeacher: {
+const valuesCourse = ["SegundoA", "SegundoB", "TerceroA", "TerceroB", "CuartoA", "CuartoB", "QuintoA", "QuintoB"];
+
+const assignmentSchema = new Schema({
+emailTeacher: {
     type:String,
     required:true,
     minlength: 8,
@@ -13,7 +13,9 @@ const assignmentSchema = new Schema(
     noWhiteSpaces:0
   },
   course: {
-    type:String
+    type:String,
+    enum:{
+      values: valuesCourse,message:"Opción no valida"}
   },
   name: {
     type:String,

@@ -7,9 +7,9 @@ const getCount = async (request, response, next) => {
   try {
     const id = request.params.id //Id de proyectos (assignmentId)
 
-    isValidObjectId(id, response)
+    isValidObjectId(id)
  
-    //Cantidad de projectos entregados calificados por asignación
+    //Cantidad de projectos entregados / calificados por asignación
     const qualifiedCount = await StudentsFeedback.countDocuments({
       assignmentId : id,
       qualified:true
@@ -26,7 +26,14 @@ const getCount = async (request, response, next) => {
       resultString
     });
   } catch (error) { 
+    if (error.message === 'Id Not Valid'){
+      return response.status(400).json({
+        message:"Id Not Valid"
+      });
+
+    } else {
     next (error);
+    };
   }
 }
 

@@ -23,13 +23,14 @@ const allUsers = async (request, response, next) => {
 
     const arrayUsers = await UserEV.find(filters); 
 
-    if (arrayUsers.length === 0) {
+    if (arrayUsers?.length === 0) {
       return response.status(404).json({ 
         message:"Users Not Found"});
     }
     return response.status(200).json({ 
       message:"Users found successfully",
       "Users":arrayUsers});
+      
   } catch (error) { 
     next (error);
   }

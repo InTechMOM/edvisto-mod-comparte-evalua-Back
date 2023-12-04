@@ -9,9 +9,8 @@ const userDelete = async (request, response, next) => {
 
   try { 
     
-    isValidObjectId(id, response);
+    isValidObjectId(id);
 
-    //Busqueda del usario y eliminación
     const usertoDelete = await UserEV.findById(id);
     if (!usertoDelete) {
       return response.status(404).json({
@@ -27,12 +26,20 @@ const userDelete = async (request, response, next) => {
        message:"User successfully deleted",
        data: deletedUser
       })
-  }catch (error) { 
-    switch (error.code) {
-      case 'auth/invalid-uid':
-        break;
-    }
+      
+  } catch (error) { 
+    if (error.message === 'auth/invalid-uid'){
+      return response.status(422).json({
+        message:"Invalid Uid provided for authentication"
+      });
+    } else if (error.message === 'Id Not Valid'){
+      return response.status(422).json({
+        message:"Id Not Valid"
+      });
+
+    } else {
     next (error);
+    }
   };
 }
 export default userDelete;
